@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Enable optimizing static images
+  images: {
+    unoptimized: true,
+  },
+  // Add your Tailwind CSS
+  webpack: (config) => {
+    return config;
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
