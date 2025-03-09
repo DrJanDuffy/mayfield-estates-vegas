@@ -75,7 +75,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <div className="relative w-full h-full">
               <Image 
-                src="/hero-image.jpg" 
+                src="/Back Exterior001-024-009-4200x2800.jpg" 
                 alt="Mayfield Estates Las Vegas" 
                 fill
                 priority
@@ -103,7 +103,7 @@ export default function Home() {
               <div className="md:w-1/2 mb-10 md:mb-0">
                 <div className="relative w-full h-96 rounded-lg shadow-xl overflow-hidden">
                   <Image 
-                    src="/community-image.jpg" 
+                    src="/Amenities003-029-018-4200x2800.jpg" 
                     alt="Mayfield Estates Community" 
                     fill
                     style={{ objectFit: 'cover' }}
@@ -200,7 +200,7 @@ export default function Home() {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:shadow-xl">
                 <div className="relative h-64 w-full">
                   <Image 
-                    src="/property1.jpg" 
+                    src="/Bedroom One001-018-027-4200x2800.jpg" 
                     alt="Luxury Home" 
                     className="object-cover"
                     fill
@@ -229,7 +229,7 @@ export default function Home() {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:shadow-xl">
                 <div className="relative h-64 w-full">
                   <Image 
-                    src="/property2.jpg" 
+                    src="/Bedroom One002-019-025-4200x2800.jpg" 
                     alt="Spanish Villa" 
                     className="object-cover"
                     fill
@@ -258,7 +258,7 @@ export default function Home() {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:shadow-xl">
                 <div className="relative h-64 w-full">
                   <Image 
-                    src="/property3.jpg" 
+                    src="/Bedroom Three001-021-017-4200x2801.jpg" 
                     alt="Contemporary Home" 
                     className="object-cover"
                     fill
@@ -290,7 +290,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Neighborhood Section - Added New Section */}
+        {/* Neighborhood Section */}
         <section id="neighborhood" className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-2 text-center text-indigo-800">Explore the Neighborhood</h2>
@@ -300,7 +300,7 @@ export default function Home() {
               <div>
                 <div className="relative h-64 w-full mb-6 rounded-lg shadow-lg overflow-hidden">
                   <Image 
-                    src="/neighborhood.jpg" 
+                    src="/Amenities001-027-019-4200x2800.jpg" 
                     alt="Las Vegas Strip" 
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -333,7 +333,7 @@ export default function Home() {
               <div>
                 <div className="relative h-64 w-full mb-6 rounded-lg shadow-lg overflow-hidden">
                   <Image 
-                    src="/local-amenities.jpg" 
+                    src="/Amenities002-028-026-4200x2801.jpg" 
                     alt="Local Schools" 
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -368,7 +368,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Gallery Section - Added New Section */}
+        {/* Gallery Section */}
         <section id="gallery" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-2 text-center text-indigo-800">Community Gallery</h2>
@@ -377,7 +377,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               <div className="relative h-64 rounded-lg shadow-lg overflow-hidden transition duration-300 hover:opacity-90">
                 <Image 
-                  src="/gallery1.jpg" 
+                  src="/Back Exterior001-024-009-4200x2800.jpg" 
                   alt="Community Center" 
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
@@ -387,7 +387,7 @@ export default function Home() {
               </div>
               <div className="relative h-64 rounded-lg shadow-lg overflow-hidden transition duration-300 hover:opacity-90">
                 <Image 
-                  src="/gallery2.jpg" 
+                  src="/Back Exterior002-025-028-4200x2800.jpg" 
                   alt="Pool Area" 
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
@@ -397,7 +397,7 @@ export default function Home() {
               </div>
               <div className="relative h-64 rounded-lg shadow-lg overflow-hidden transition duration-300 hover:opacity-90">
                 <Image 
-                  src="/gallery3.jpg" 
+                  src="/Back Exterior003-026-015-4200x2800.jpg" 
                   alt="Tennis Courts" 
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
@@ -407,7 +407,7 @@ export default function Home() {
               </div>
               <div className="relative h-64 rounded-lg shadow-lg overflow-hidden transition duration-300 hover:opacity-90">
                 <Image 
-                  src="/gallery4.jpg" 
+                  src="/Bathroom One001-022-023-4200x2801.jpg" 
                   alt="Fitness Center" 
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
@@ -513,3 +513,95 @@ export default function Home() {
                       <p className="text-indigo-200">Mon-Fri: 9am-6pm, Sat: 10am-4pm</p>
                     </div>
                   </div>
+                  
+                  <div className="flex items-start">
+                    <div className="bg-indigo-700 p-3 rounded-full mr-4">
+                      <i className="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-xl mb-1">Email Us</h4>
+                      <p className="text-indigo-200">info@mayfieldestateslasvegas.com</p>
+                      <p className="text-indigo-200">sales@mayfieldestateslasvegas.com</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-10">
+                    <h4 className="font-bold text-xl mb-4">Follow Us</h4>
+                    <div className="flex space-x-4">
+                      <a href="#" className="bg-indigo-700 hover:bg-indigo-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                        <i className="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="#" className="bg-indigo-700 hover:bg-indigo-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                        <i className="fab fa-instagram"></i>
+                      </a>
+                      <a href="#" className="bg-indigo-700 hover:bg-indigo-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                        <i className="fab fa-twitter"></i>
+                      </a>
+                      <a href="#" className="bg-indigo-700 hover:bg-indigo-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                        <i className="fab fa-youtube"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Footer */}
+        <footer className="bg-gray-900 text-white py-10">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+              <div>
+                <h3 className="text-xl font-bold mb-4">Mayfield Estates</h3>
+                <p className="text-gray-400 mb-4">Luxury living in the heart of Las Vegas. Experience the pinnacle of desert luxury in our master-planned community.</p>
+                <p className="text-gray-400">License# S.0197614.LLC</p>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                  <li><a href="#about" className="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                  <li><a href="#properties" className="text-gray-400 hover:text-white transition duration-300">Properties</a></li>
+                  <li><a href="#gallery" className="text-gray-400 hover:text-white transition duration-300">Gallery</a></li>
+                  <li><a href="#contact" className="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-bold mb-4">Resources</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Moving to Las Vegas</a></li>
+                  <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Mortgage Calculator</a></li>
+                  <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Home Buying Guide</a></li>
+                  <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Property Management</a></li>
+                  <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-bold mb-4">Newsletter</h3>
+                <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates on new listings and community events.</p>
+                <form className="flex">
+                  <input 
+                    type="email" 
+                    placeholder="Your email address" 
+                    className="bg-gray-800 px-4 py-2 rounded-l flex-grow focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  />
+                  <button className="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r transition duration-300">
+                    <i className="fas fa-paper-plane"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            
+            <div className="border-t border-gray-800 pt-8 text-center">
+              <p className="text-gray-500">© 2025 Mayfield Estates Las Vegas. All rights reserved. Website by Dr. Janet Duffy</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+}
