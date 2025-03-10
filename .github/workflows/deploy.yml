@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
@@ -20,4 +20,5 @@ jobs:
           vercel-project-id: mayfield-estates-vegas-l7kb
           vercel-args: '--prod'
           vercel-working-directory: ./
-          vercel-deployment-command: 'vercel deploy --prod' 
+          vercel-deployment-command: 'vercel deploy --prod'
+          vercel-deployment-timeout: 300s 
