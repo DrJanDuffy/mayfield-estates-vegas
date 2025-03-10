@@ -1,0 +1,10 @@
+---
+description: Comprehensive rules for developing realtor websites with integrated RealScout listings, Homebot valuations, CloudCMA market analysis, and Percy.ai buyer tools. Optimized for lead generation and conversion.
+globs: {   "autoAttach": {     "filePatterns": [       "*.html",       "*.js",       "*.jsx",       "*.ts",       "*.tsx",       "*.css",       "*.scss"     ],     "folderPatterns": [       "src/*",       "public/*",       "components/*",       "pages/*"     ]   } }
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
