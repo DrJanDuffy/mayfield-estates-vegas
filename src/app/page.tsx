@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MarketUpdates from './components/MarketUpdates';
 
+// Main page component for Mayfield Estates Las Vegas
 export default function Home() {
   // Mobile menu toggle functionality
   useEffect(() => {
