@@ -10,6 +10,7 @@ interface MarketData {
   newListings: number;
 }
 
+// MarketUpdates component for displaying real-time market statistics
 export default function MarketUpdates() {
   const [marketData, setMarketData] = useState<MarketData>({
     averagePrice: 0,
