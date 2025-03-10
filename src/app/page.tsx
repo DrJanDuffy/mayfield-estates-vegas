@@ -4,12 +4,7 @@ import { useEffect } from 'react';
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-
-// Dynamically import MarketUpdates with no SSR
-const MarketUpdates = dynamic(() => import('../components/MarketUpdates'), {
-  ssr: false
-});
+import MarketUpdates from '../components/MarketUpdates';
 
 export default function Home() {
   // Mobile menu toggle functionality
