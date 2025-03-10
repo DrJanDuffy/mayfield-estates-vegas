@@ -1,0 +1,23 @@
+name: Deploy to Vercel
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  Deploy-Production:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: janet-duffys-projects
+          vercel-project-id: mayfield-estates-vegas-l7kb
+          vercel-args: '--prod'
+          vercel-working-directory: ./
+          vercel-deployment-command: 'vercel deploy --prod' 
