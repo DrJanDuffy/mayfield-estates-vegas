@@ -2,6 +2,18 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Environment Setup
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-B4PKM86E4G
+```
+
+For production deployments on Vercel, these environment variables are already configured in the Vercel dashboard.
+
+### Running the Development Server
+
 First, run the development server:
 
 ```bash
