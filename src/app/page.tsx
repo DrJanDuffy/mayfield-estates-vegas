@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Navigation } from '@/components/Navigation';
 
 // Main page component for Mayfield Estates Las Vegas
 export default function Home() {
@@ -39,26 +40,45 @@ export default function Home() {
 
       <div className="font-sans text-gray-800">
         {/* Navigation */}
-        <nav className="bg-white shadow-md fixed w-full z-10">
-          {/* Navigation content here */}
-        </nav>
+        <div className="fixed w-full z-10">
+          <Navigation />
+        </div>
 
         {/* Hero Section */}
-        <header className="relative flex items-center justify-center text-white text-center" style={{ height: "80vh" }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="relative flex items-center justify-center text-white text-center" style={{ height: "80vh", marginTop: "64px" }}>
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/hero-1.jpg"
+              alt="Mayfield Estates Las Vegas"
+              fill
+              priority
+              style={{ objectFit: 'cover' }}
+              className="opacity-90"
+            />
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+          </div>
+          
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Welcome to Mayfield Estates</h1>
-              <p className="text-xl md:text-2xl mb-8">Luxury Living in Las Vegas</p>
-              <div className="flex justify-center gap-4">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                Welcome to Mayfield Estates
+              </h1>
+              <p className="text-xl md:text-3xl mb-8 drop-shadow-md">
+                Luxury Living in Las Vegas
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link 
                   href="/cma" 
-                  className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg"
                 >
                   Get Your Home Value
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors shadow-lg"
                 >
                   Contact Us
                 </Link>

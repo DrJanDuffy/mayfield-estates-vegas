@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export function Navigation() {
@@ -11,10 +12,19 @@ export function Navigation() {
   };
 
   return (
-    <nav className="bg-white shadow-sm">
+      <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex space-x-4">
+        <div className="flex justify-between items-center h-16">
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/logo.png" 
+              alt="Mayfield Estates Las Vegas" 
+              width={180} 
+              height={50}
+              className="h-12 w-auto"
+            />
+          </Link>
+          <div className="flex items-center space-x-1 sm:space-x-4">
             <Link 
               href="/" 
               className={`flex items-center px-3 py-2 ${isActive('/')} hover:text-blue-600`}
