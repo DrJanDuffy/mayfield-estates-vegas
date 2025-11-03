@@ -19,10 +19,11 @@ export default function HomeValuePage() {
     "description": "Get a detailed home value report with real-time market data for your Las Vegas property. Includes instant valuation, market comparisons, and investment insights.",
     "provider": {
       "@type": "RealEstateAgent",
-      "name": "Las Vegas Real Estate",
+      "name": "Dr. Jan Duffy",
       "areaServed": {
         "@type": "City",
-        "name": "Las Vegas"
+        "name": "Las Vegas",
+        "state": "NV"
       }
     },
     "serviceType": "Home Valuation",
