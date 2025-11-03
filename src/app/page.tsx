@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,29 +8,6 @@ import Footer from '@/components/Footer';
 
 // Main page component for Mayfield Estates Las Vegas
 export default function Home() {
-  // Mobile menu toggle functionality
-  useEffect(() => {
-    const handleMobileMenu = () => {
-      const mobileMenuButton = document.querySelector('.mobile-menu-button');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      
-      if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-        });
-      }
-    };
-    
-    handleMobileMenu();
-    
-    return () => {
-      const mobileMenuButton = document.querySelector('.mobile-menu-button');
-      if (mobileMenuButton) {
-        mobileMenuButton.removeEventListener('click', () => {});
-      }
-    };
-  }, []);
-
   return (
     <>
       <Script 
@@ -89,8 +65,82 @@ export default function Home() {
         </header>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-gray-50">
-          {/* About content here */}
+        <section id="about" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  About Mayfield Estates
+                </h2>
+                <p className="text-lg text-gray-600 mb-4">
+                  Experience the pinnacle of luxury living in Las Vegas at Mayfield Estates. 
+                  This exclusive gated community offers world-class amenities, stunning architecture, 
+                  and unparalleled privacy in one of the most sought-after neighborhoods in Nevada.
+                </p>
+                <p className="text-lg text-gray-600 mb-6">
+                  As your trusted real estate expert, Dr. Jan Duffy brings decades of experience 
+                  and a deep understanding of the Las Vegas luxury market to help you find or sell 
+                  your perfect home in Mayfield Estates.
+                </p>
+                <Link 
+                  href="/contact"
+                  className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                >
+                  Learn More About Our Services
+                </Link>
+              </div>
+              <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
+                <Image
+                  src="/market-featured.jpg"
+                  alt="Mayfield Estates Las Vegas"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-20 bg-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Dr. Jan Duffy?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Expert Knowledge</h3>
+                <p className="text-gray-600">
+                  Decades of experience in Las Vegas luxury real estate market
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Veteran & Women-Owned</h3>
+                <p className="text-gray-600">
+                  Proudly serving with integrity and dedication
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Mayfield Estates Specialist</h3>
+                <p className="text-gray-600">
+                  Deep understanding of this exclusive community
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Properties Section */}
