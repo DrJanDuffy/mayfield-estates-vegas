@@ -107,20 +107,24 @@ export default function SouthwestPage() {
               </h2>
               <div className="grid md:grid-cols-4 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">$500K+</div>
-                  <div className="text-gray-700">Average Home Price</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">$555K</div>
+                  <div className="text-gray-700">Mtns Edge Avg</div>
+                  <div className="text-sm text-gray-500 mt-1">$497K Median</div>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">38</div>
-                  <div className="text-gray-700">Median Age</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">150</div>
+                  <div className="text-gray-700">Mtns Edge Available</div>
+                  <div className="text-sm text-gray-500 mt-1">53.3% Reduced</div>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">Fastest</div>
-                  <div className="text-gray-700">Growth Rate</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">65</div>
+                  <div className="text-gray-700">Days on Market</div>
+                  <div className="text-sm text-gray-500 mt-1">Active Market</div>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">New</div>
-                  <div className="text-gray-700">Construction</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">2.7%</div>
+                  <div className="text-gray-700">Distressed Rate</div>
+                  <div className="text-sm text-gray-500 mt-1">Low Distressed</div>
                 </div>
               </div>
             </div>
@@ -134,12 +138,12 @@ export default function SouthwestPage() {
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
-                  { title: 'Mountain&apos;s Edge', desc: '7,500 acres with parks, trails, and amenities' },
-                  { title: 'Providence', desc: 'Luxury homes with mountain and Strip views' },
-                  { title: 'Rhodes Ranch', desc: 'Championship golf course community' },
-                  { title: 'Southern Highlands', desc: 'Private golf and country club community' },
-                  { title: 'Inspirada', desc: 'Active lifestyle with 150+ acres of parks' },
-                  { title: 'Seven Hills', desc: 'Gated community with spectacular views' },
+                  { title: 'Mountain&apos;s Edge', desc: '$555K avg, 150 homes available, 65 DOM, 2.7% distressed' },
+                  { title: 'Providence', desc: '$520K avg, 77 homes available, 69 DOM, 41.6% reduced' },
+                  { title: 'Rhodes Ranch', desc: '$684K avg, 64 homes available, 73 DOM, 40.6% reduced' },
+                  { title: 'Southern Highlands', desc: '$1.56M avg, 187 homes available, 67 DOM, 40.1% reduced' },
+                  { title: 'Spanish Trail', desc: '$2.0M avg, 43 homes available, 94 DOM, ultra luxury' },
+                  { title: 'Centennial Hills', desc: '$732K avg, 80 homes available, 70 DOM, 55% reduced' },
                 ].map((community, idx) => (
                   <div key={idx} className="bg-gray-50 p-6 rounded-xl">
                     <h3 className="text-xl font-semibold mb-3 text-gray-900">{community.title}</h3>

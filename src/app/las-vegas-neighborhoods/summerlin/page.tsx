@@ -106,20 +106,24 @@ export default function SummerlinPage() {
               </h2>
               <div className="grid md:grid-cols-4 gap-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">$700K+</div>
-                  <div className="text-gray-700">Average Home Price</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">$1.33M</div>
+                  <div className="text-gray-700">Average Price</div>
+                  <div className="text-sm text-gray-500 mt-1">$842K Median</div>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">22,500</div>
-                  <div className="text-gray-700">Acres</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">170</div>
+                  <div className="text-gray-700">Homes Available</div>
+                  <div className="text-sm text-gray-500 mt-1">48.8% Reduced</div>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">150+</div>
-                  <div className="text-gray-700">Parks & Trails</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">74</div>
+                  <div className="text-gray-700">Days on Market</div>
+                  <div className="text-sm text-gray-500 mt-1">Low Distressed</div>
                 </div>
                 <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">8</div>
-                  <div className="text-gray-700">Golf Courses</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">0.6%</div>
+                  <div className="text-gray-700">Distressed Rate</div>
+                  <div className="text-sm text-gray-500 mt-1">Strong Market</div>
                 </div>
               </div>
             </div>
