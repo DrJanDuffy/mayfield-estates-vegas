@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/cma',
     '/blog',
     '/las-vegas-neighborhoods',
+    '/las-vegas-neighborhoods/summerlin',
+    '/las-vegas-neighborhoods/green-valley',
+    '/las-vegas-neighborhoods/southwest',
+    '/las-vegas-neighborhoods/henderson',
+    '/las-vegas-neighborhoods/north-las-vegas',
+    '/las-vegas-neighborhoods/mayfield-estates',
     '/mayfield-estates',
     '/mayfield-estates/amenities',
     '/mayfield-estates/floor-plans',
@@ -20,8 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: route.startsWith('/mayfield-estates') ? 'weekly' as const : 'daily' as const,
-    priority: route === '' ? 1 : route.startsWith('/mayfield-estates') ? 0.9 : 0.8,
+    changeFrequency: route.startsWith('/mayfield-estates') || route.startsWith('/las-vegas-neighborhoods') ? 'weekly' as const : 'daily' as const,
+    priority: route === '' ? 1 : route.startsWith('/mayfield-estates') || route.startsWith('/las-vegas-neighborhoods/mayfield-estates') ? 0.9 : 0.8,
   }))
 
   // Add dynamic routes here when implemented
