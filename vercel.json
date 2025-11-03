@@ -54,7 +54,7 @@
           "value": "mayfieldestateslasvegas.com"
         }
       ],
-      "destination": "https://www.mayfieldestateslasvegas.com/:1",
+      "destination": "https://www.mayfieldestateslasvegas.com/$1",
       "permanent": true
     }
   ]
