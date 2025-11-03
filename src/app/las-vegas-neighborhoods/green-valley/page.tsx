@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Green Valley Las Vegas | Family Community Real Estate Guide',
   description: 'Explore Green Valley, Las Vegas established family community. Learn about affordable homes, excellent schools, parks, and convenient location. Expert real estate insights from Dr. Jan Duffy.',
-  keywords: 'Green Valley Las Vegas, Green Valley homes for sale, Green Valley real estate, Henderson Green Valley, Las Vegas family community, Green Valley schools, affordable Las Vegas homes',
   openGraph: {
     title: 'Green Valley Las Vegas | Family-Friendly Community',
     description: 'Discover Green Valley, a perfect blend of established neighborhoods, excellent schools, and convenient amenities.',
@@ -35,12 +34,42 @@ export default function GreenValleyPage() {
     "url": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/green-valley"
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.mayfieldestateslasvegas.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Las Vegas Neighborhoods",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Green Valley",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/green-valley"
+      }
+    ]
+  };
+
   return (
     <>
       <Script
         id="local-business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="min-h-screen bg-gray-50">
         <div className="fixed w-full z-10">
@@ -90,7 +119,7 @@ export default function GreenValleyPage() {
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
                     src="/property-2.jpg"
-                    alt="Green Valley family homes"
+                    alt="Traditional single-story homes with mature trees and sidewalks"
                     fill
                     className="object-cover"
                   />

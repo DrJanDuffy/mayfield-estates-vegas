@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <div className="h-16 w-16 relative overflow-hidden rounded-full">
                       <Image
                         src="/DrJanDuffywithGooldCircle.jpg"
-                        alt="Dr. Jan Duffy REALTOR"
+                        alt="Professional real estate agent photo"
                         fill
                         className="object-cover"
                         sizes="(max-width: 64px) 100vw, 64px"

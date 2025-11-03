@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Southwest Las Vegas | Growing Luxury Area | Real Estate Guide',
   description: 'Discover Southwest Las Vegas, a rapidly growing area with modern luxury homes and master-planned communities. Expert real estate insights from Dr. Jan Duffy.',
-  keywords: 'Southwest Las Vegas, Southwest Las Vegas real estate, new construction Las Vegas, Las Vegas master-planned communities, luxury homes Las Vegas, Southwest Las Vegas homes for sale',
   openGraph: {
     title: 'Southwest Las Vegas | Growing Luxury Area',
     description: 'Explore Southwest Las Vegas, featuring modern luxury homes and master-planned communities.',
@@ -35,12 +34,42 @@ export default function SouthwestPage() {
     "url": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/southwest"
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.mayfieldestateslasvegas.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Las Vegas Neighborhoods",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Southwest Las Vegas",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/southwest"
+      }
+    ]
+  };
+
   return (
     <>
       <Script
         id="local-business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="min-h-screen bg-gray-50">
         <div className="fixed w-full z-10">
@@ -90,7 +119,7 @@ export default function SouthwestPage() {
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
                     src="/property-3.jpg"
-                    alt="Southwest Las Vegas modern homes"
+                    alt="Contemporary homes with clean lines and desert landscaping"
                     fill
                     className="object-cover"
                   />

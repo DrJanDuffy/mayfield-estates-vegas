@@ -9,7 +9,6 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Las Vegas Real Estate Blog | Market Insights & Tips | Mayfield Estates',
   description: 'Expert Las Vegas real estate market insights, home buying tips, selling strategies, and local market trends from Dr. Jan Duffy, your Mayfield Estates specialist.',
-  keywords: 'Las Vegas real estate blog, Las Vegas market trends, home buying tips, selling advice, Las Vegas housing market, real estate news, Mayfield Estates insights',
   openGraph: {
     title: 'Las Vegas Real Estate Blog | Expert Market Insights',
     description: 'Stay informed about the Las Vegas real estate market with expert insights and tips.',

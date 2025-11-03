@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'North Las Vegas | Affordable Growth Area | Real Estate Guide',
   description: 'Discover North Las Vegas, an affordable area with new construction and rapid growth. Learn about value homes, new developments, and investment opportunities. Expert real estate insights from Dr. Jan Duffy.',
-  keywords: 'North Las Vegas real estate, North Las Vegas homes for sale, affordable Las Vegas homes, North Las Vegas new construction, Las Vegas growth area, value homes Las Vegas',
   openGraph: {
     title: 'North Las Vegas | Affordable Growth Area',
     description: 'Explore North Las Vegas, offering affordable homes and excellent value in a rapidly growing area.',
@@ -35,12 +34,42 @@ export default function NorthLasVegasPage() {
     "url": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/north-las-vegas"
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.mayfieldestateslasvegas.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Las Vegas Neighborhoods",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "North Las Vegas",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/north-las-vegas"
+      }
+    ]
+  };
+
   return (
     <>
       <Script
         id="local-business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="min-h-screen bg-gray-50">
         <div className="fixed w-full z-10">
@@ -89,7 +118,7 @@ export default function NorthLasVegasPage() {
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
                     src="/market-featured.jpg"
-                    alt="North Las Vegas affordable homes"
+                    alt="New construction homes with modern features and spacious lots"
                     fill
                     className="object-cover"
                   />

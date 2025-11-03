@@ -27,7 +27,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0">
             <Image
               src="/Back Exterior001-024-009-4200x2800.jpg"
-              alt="Luxury Mayfield Estates Las Vegas luxury home exterior"
+              alt="Modern two-story home with desert landscaping and mountain views in Las Vegas"
               fill
               priority
               style={{ objectFit: 'cover' }}
@@ -118,7 +118,7 @@ export default function Home() {
                   About Mayfield Estates
                 </h2>
                 <p className="text-lg text-gray-600 mb-4">
-                  Experience the pinnacle of luxury living in Las Vegas at Mayfield Estates. 
+                  Experience the pinnacle of luxury living in <Link href="/las-vegas-neighborhoods/mayfield-estates" className="text-blue-600 hover:text-blue-800 underline">Las Vegas at Mayfield Estates</Link>. 
                   This exclusive gated community offers world-class amenities, stunning architecture, 
                   and unparalleled privacy in one of the most sought-after neighborhoods in Nevada.
                 </p>
@@ -131,13 +131,13 @@ export default function Home() {
                   href="/contact"
                   className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                 >
-                  Learn More About Our Services
+                  Contact Dr. Jan Duffy
                 </Link>
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src="/market-featured.jpg"
-                  alt="Mayfield Estates Las Vegas"
+                  alt="Luxury home interior with modern furnishings and open floor plan"
                   fill
                   className="object-cover"
                 />
@@ -195,12 +195,12 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Explore Las Vegas Luxury Real Estate
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                From Mayfield Estates to Summerlin, Green Valley, and beyond—discover the finest neighborhoods in Las Vegas
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                From <Link href="/las-vegas-neighborhoods/mayfield-estates" className="text-blue-600 hover:text-blue-800 underline">Mayfield Estates</Link> to <Link href="/las-vegas-neighborhoods/summerlin" className="text-blue-600 hover:text-blue-800 underline">Summerlin</Link>, <Link href="/las-vegas-neighborhoods/green-valley" className="text-blue-600 hover:text-blue-800 underline">Green Valley</Link>, and beyond—discover the finest <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:text-blue-800 underline">neighborhoods in Las Vegas</Link>
               </p>
             </div>
             <div className="grid md:grid-cols-4 gap-6">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <Link href="/las-vegas-neighborhoods/mayfield-estates" className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Mayfield Estates</h3>
                   <p className="text-gray-600 mb-4">Exclusive gated community offering privacy and luxury</p>
@@ -210,8 +210,8 @@ export default function Home() {
                     <li>✓ Spacious Estates</li>
                   </ul>
                 </div>
-              </div>
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              </Link>
+              <Link href="/las-vegas-neighborhoods/summerlin" className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Summerlin</h3>
                   <p className="text-gray-600 mb-4">Master-planned community with world-class amenities</p>
@@ -221,8 +221,8 @@ export default function Home() {
                     <li>✓ Parks & Trails</li>
                   </ul>
                 </div>
-              </div>
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              </Link>
+              <Link href="/las-vegas-neighborhoods/green-valley" className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Green Valley</h3>
                   <p className="text-gray-600 mb-4">Established community with excellent schools</p>
@@ -232,7 +232,7 @@ export default function Home() {
                     <li>✓ Affordable Luxury</li>
                   </ul>
                 </div>
-              </div>
+              </Link>
               <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">The Strip</h3>

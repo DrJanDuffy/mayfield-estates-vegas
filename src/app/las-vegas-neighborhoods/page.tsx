@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Las Vegas Neighborhoods | Expert Real Estate Guide | Mayfield Estates',
   description: 'Discover the best neighborhoods in Las Vegas, NV. Expert real estate guide to Summerlin, Green Valley, Southwest Las Vegas, Henderson, and more. Find your perfect luxury home with Dr. Jan Duffy.',
-  keywords: 'Las Vegas neighborhoods, Las Vegas real estate guide, Summerlin homes, Green Valley Las Vegas, Henderson Nevada, Southwest Las Vegas, Las Vegas luxury neighborhoods, Las Vegas communities, Mayfield Estates',
   openGraph: {
     title: 'Las Vegas Neighborhoods | Expert Real Estate Guide',
     description: 'Discover the best neighborhoods in Las Vegas, from luxury communities to family-friendly areas.',
@@ -286,7 +285,7 @@ export default function LasVegasNeighborhoodsPage() {
                       </div>
 
                       <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
-                        Learn More
+                        Explore {neighborhood.name} Homes for Sale
                         <svg
                           className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
                           fill="none"

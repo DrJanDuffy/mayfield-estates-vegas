@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Henderson Nevada | Safe Family Community | Real Estate Guide',
   description: 'Explore Henderson, Nevada second-largest city. Learn about safe neighborhoods, award-winning parks, top schools, and family-friendly living. Expert real estate insights from Dr. Jan Duffy.',
-  keywords: 'Henderson Nevada, Henderson real estate, Henderson homes for sale, safe Las Vegas area, Henderson schools, Lake Las Vegas, Nevada real estate Henderson',
   openGraph: {
     title: 'Henderson Nevada | Safe Family Community',
     description: 'Discover Henderson, one of the safest cities in Nevada with award-winning parks and excellent schools.',
@@ -35,12 +34,42 @@ export default function HendersonPage() {
     "url": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/henderson"
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.mayfieldestateslasvegas.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Las Vegas Neighborhoods",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Henderson",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/henderson"
+      }
+    ]
+  };
+
   return (
     <>
       <Script
         id="local-business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="min-h-screen bg-gray-50">
         <div className="fixed w-full z-10">
@@ -89,7 +118,7 @@ export default function HendersonPage() {
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
                     src="/Amenities001-027-019-4200x2800.jpg"
-                    alt="Henderson Nevada homes"
+                    alt="Well-maintained homes in safe residential neighborhood"
                     fill
                     className="object-cover"
                   />

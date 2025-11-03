@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Summerlin Las Vegas | Luxury Master-Planned Community | Real Estate Guide',
   description: 'Complete guide to Summerlin, Las Vegas premier master-planned community. Learn about luxury homes, top schools, Red Rock Canyon access, and world-class amenities. Expert real estate insights from Dr. Jan Duffy.',
-  keywords: 'Summerlin Las Vegas, Summerlin homes for sale, Summerlin real estate, Summerlin master-planned community, Las Vegas luxury homes Summerlin, Red Rock Canyon, Summerlin schools, golf courses Las Vegas',
   openGraph: {
     title: 'Summerlin Las Vegas | Luxury Master-Planned Community',
     description: 'Discover Summerlin, Las Vegas premier master-planned community with world-class amenities and luxury homes.',
@@ -35,12 +34,42 @@ export default function SummerlinPage() {
     "url": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/summerlin"
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.mayfieldestateslasvegas.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Las Vegas Neighborhoods",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Summerlin",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/summerlin"
+      }
+    ]
+  };
+
   return (
     <>
       <Script
         id="local-business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="min-h-screen bg-gray-50">
         <div className="fixed w-full z-10">
@@ -71,7 +100,7 @@ export default function SummerlinPage() {
                     About Summerlin
                   </h2>
                   <p className="text-lg text-gray-700 mb-4">
-                    Summerlin is Las Vegas premier master-planned community, spanning over 22,500 acres and 
+                    <Link href="/las-vegas-neighborhoods/summerlin" className="text-blue-600 hover:text-blue-800 font-semibold">Summerlin</Link> is <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:text-blue-800">Las Vegas</Link> premier master-planned community, spanning over 22,500 acres and 
                     home to more than 100,000 residents. Developed by The Howard Hughes Corporation since 1990, 
                     Summerlin offers a unique blend of luxury living, natural beauty, and world-class amenities.
                   </p>
@@ -89,7 +118,7 @@ export default function SummerlinPage() {
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
                     src="/property-1.jpg"
-                    alt="Summerlin luxury homes"
+                    alt="Spanish-style homes with red tile roofs in master-planned community"
                     fill
                     className="object-cover"
                   />

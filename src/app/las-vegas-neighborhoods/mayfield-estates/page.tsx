@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Mayfield Estates Las Vegas | Exclusive Gated Community | Luxury Homes',
   description: 'Explore Mayfield Estates, Las Vegas premier exclusive gated community. Learn about luxury estates, world-class amenities, privacy, and security. Expert insights from Dr. Jan Duffy, Mayfield Estates specialist.',
-  keywords: 'Mayfield Estates Las Vegas, Mayfield Estates luxury homes, Mayfield Estates gated community, Las Vegas luxury estates, Mayfield Estates Nevada, gated community Las Vegas, luxury real estate Mayfield Estates',
   openGraph: {
     title: 'Mayfield Estates Las Vegas | Exclusive Gated Community',
     description: 'Discover Mayfield Estates, Las Vegas premier exclusive gated community with luxury estates and world-class amenities.',
@@ -62,6 +61,31 @@ export default function MayfieldEstatesPage() {
     ]
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.mayfieldestateslasvegas.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Las Vegas Neighborhoods",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Mayfield Estates",
+        "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/mayfield-estates"
+      }
+    ]
+  };
+
   return (
     <>
       <Script
@@ -73,6 +97,11 @@ export default function MayfieldEstatesPage() {
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="min-h-screen bg-gray-50">
         <div className="fixed w-full z-10">
@@ -103,7 +132,7 @@ export default function MayfieldEstatesPage() {
                     About Mayfield Estates
                   </h2>
                   <p className="text-lg text-gray-700 mb-4">
-                    Mayfield Estates is a well-established neighborhood in Las Vegas, Nevada, featuring midsize 
+                    <Link href="/las-vegas-neighborhoods/mayfield-estates" className="text-blue-600 hover:text-blue-800 font-semibold">Mayfield Estates</Link> is a well-established neighborhood in <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:text-blue-800">Las Vegas, Nevada</Link>, featuring midsize 
                     homes that are very reasonably priced. This community dates back to 2004, with construction 
                     completed around that time, offering a mature, settled atmosphere in one of Las Vegas most 
                     desirable areas.
@@ -123,7 +152,7 @@ export default function MayfieldEstatesPage() {
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
                     src="/Back Exterior001-024-009-4200x2800.jpg"
-                    alt="Mayfield Estates luxury estate"
+                    alt="Stucco home with contemporary design and palm trees"
                     fill
                     className="object-cover"
                   />
@@ -193,7 +222,7 @@ export default function MayfieldEstatesPage() {
                 <div className="relative h-64 rounded-xl overflow-hidden shadow-lg">
                   <Image
                     src="/Back Exterior002-025-028-4200x2800.jpg"
-                    alt="Mayfield Estates exterior"
+                    alt="Architectural details of home exterior with landscaping"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-300"
                   />
@@ -201,7 +230,7 @@ export default function MayfieldEstatesPage() {
                 <div className="relative h-64 rounded-xl overflow-hidden shadow-lg">
                   <Image
                     src="/Amenities002-028-026-4200x2801.jpg"
-                    alt="Mayfield Estates amenities"
+                    alt="Community pool and recreation area"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-300"
                   />
@@ -209,7 +238,7 @@ export default function MayfieldEstatesPage() {
                 <div className="relative h-64 rounded-xl overflow-hidden shadow-lg">
                   <Image
                     src="/Bedroom One001-018-027-4200x2800.jpg"
-                    alt="Mayfield Estates bedroom"
+                    alt="Large master bedroom with king bed and windows"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-300"
                   />
