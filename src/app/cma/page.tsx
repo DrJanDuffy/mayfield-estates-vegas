@@ -2,6 +2,8 @@
 
 import Script from 'next/script';
 import { useEffect } from 'react';
+import { Navigation } from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export default function CMAPage() {
   const serviceSchema = {
@@ -69,7 +71,13 @@ export default function CMAPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <main className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50">
+        {/* Navigation */}
+        <div className="fixed w-full z-10">
+          <Navigation />
+        </div>
+        
+        <main className="pt-16">
         {/* Hero Section */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,6 +194,8 @@ export default function CMAPage() {
           strategy="afterInteractive"
         />
       </main>
+      <Footer />
+    </div>
     </>
   );
 } 

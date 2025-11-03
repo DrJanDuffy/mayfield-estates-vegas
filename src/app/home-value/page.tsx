@@ -2,6 +2,8 @@
 
 import Script from 'next/script';
 import { useEffect } from 'react';
+import { Navigation } from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 declare global {
   interface Window {
@@ -92,7 +94,13 @@ export default function HomeValuePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <main className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50">
+        {/* Navigation */}
+        <div className="fixed w-full z-10">
+          <Navigation />
+        </div>
+        
+        <main className="pt-16">
         <Script
           id="homebot-widget"
           src="https://embed.homebotapp.com/lgw/v1/widget.js"
@@ -110,6 +118,8 @@ export default function HomeValuePage() {
           <div id="homebot-widget-container" className="min-h-[600px]"></div>
         </div>
       </main>
+      <Footer />
+    </div>
     </>
   );
 } 

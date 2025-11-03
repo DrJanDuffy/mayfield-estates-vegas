@@ -1,7 +1,20 @@
 import { Suspense } from 'react';
+import { Metadata } from 'next';
 import { BlogPost } from '@/components/BlogPost';
 import { NewsletterForm } from '@/components/NewsletterForm';
 import { fetchRSSFeed } from '@/utils/rss';
+import { Navigation } from '@/components/Navigation';
+import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Las Vegas Real Estate Blog | Market Insights & Tips | Mayfield Estates',
+  description: 'Expert Las Vegas real estate market insights, home buying tips, selling strategies, and local market trends from Dr. Jan Duffy, your Mayfield Estates specialist.',
+  keywords: 'Las Vegas real estate blog, Las Vegas market trends, home buying tips, selling advice, Las Vegas housing market, real estate news, Mayfield Estates insights',
+  openGraph: {
+    title: 'Las Vegas Real Estate Blog | Expert Market Insights',
+    description: 'Stay informed about the Las Vegas real estate market with expert insights and tips.',
+  },
+};
 
 function BlogSkeleton() {
   return (
@@ -39,21 +52,29 @@ async function BlogPosts() {
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen p-8">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">
-          Real Estate Blog
-        </h1>
-        <p className="text-xl text-gray-600 mb-12">
-          Stay informed about the Las Vegas real estate market with our latest insights and tips.
-        </p>
-
-        <Suspense fallback={<BlogSkeleton />}>
-          <BlogPosts />
-        </Suspense>
-
-        <NewsletterForm />
+    <main className="min-h-screen bg-gray-50">
+      <div className="fixed w-full z-10">
+        <Navigation />
       </div>
+      <div className="pt-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            Las Vegas Real Estate Blog
+          </h1>
+          <p className="text-xl text-gray-600 mb-12 max-w-3xl">
+            Stay informed about the Las Vegas real estate market with our latest insights, tips, and expert analysis from Dr. Jan Duffy, your trusted Mayfield Estates specialist.
+          </p>
+
+          <Suspense fallback={<BlogSkeleton />}>
+            <BlogPosts />
+          </Suspense>
+
+          <div className="mt-16">
+            <NewsletterForm />
+          </div>
+        </div>
+      </div>
+      <Footer />
     </main>
   );
 } 
