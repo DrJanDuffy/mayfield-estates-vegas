@@ -143,8 +143,68 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Local Area Highlights */}
+        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Explore Las Vegas Luxury Real Estate
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                From Mayfield Estates to Summerlin, Green Valley, and beyond—discover the finest neighborhoods in Las Vegas
+              </p>
+            </div>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Mayfield Estates</h3>
+                  <p className="text-gray-600 mb-4">Exclusive gated community offering privacy and luxury</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>✓ Security & Privacy</li>
+                    <li>✓ Luxury Amenities</li>
+                    <li>✓ Spacious Estates</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Summerlin</h3>
+                  <p className="text-gray-600 mb-4">Master-planned community with world-class amenities</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>✓ Top Schools</li>
+                    <li>✓ Golf Courses</li>
+                    <li>✓ Parks & Trails</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Green Valley</h3>
+                  <p className="text-gray-600 mb-4">Established community with excellent schools</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>✓ Family Friendly</li>
+                    <li>✓ Great Schools</li>
+                    <li>✓ Affordable Luxury</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">The Strip</h3>
+                  <p className="text-gray-600 mb-4">Luxury high-rise living in the heart of Vegas</p>
+                  <ul className="text-sm text-gray-500 space-y-1">
+                    <li>✓ City Views</li>
+                    <li>✓ Ultra Luxury</li>
+                    <li>✓ Entertainment</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Properties Section */}
-        <section id="properties" className="py-20 bg-gray-50">
+        <section id="properties" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-8">Featured Properties</h2>
             <div 
@@ -162,7 +222,7 @@ export default function Home() {
         </section>
 
         {/* Market Analysis Tools Section */}
-        <section className="w-full py-12 bg-gray-50">
+        <section className="w-full py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-8">Market Analysis Tools</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

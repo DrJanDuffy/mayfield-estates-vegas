@@ -7,6 +7,7 @@ import Analytics from '@/components/Analytics';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mayfieldestateslasvegas.com'),
   title: process.env.NEXT_PUBLIC_SITE_NAME || 'Mayfield Estates Las Vegas Real Estate | Dr. Jan Duffy, REALTOR®',
   description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Expert Mayfield Estates Las Vegas real estate agent. Luxury homes for sale, market analysis, and professional guidance in this exclusive gated community. Veteran & women-owned.',
   keywords: 'Mayfield Estates Las Vegas, Las Vegas real estate agent, luxury homes Las Vegas, Mayfield Estates homes for sale, Las Vegas REALTOR, Mayfield Estates gated community, luxury real estate Las Vegas, Dr. Jan Duffy realtor, Mayfield Estates Nevada, Las Vegas luxury properties, Mayfield Estates listings, real estate agent Las Vegas NV, veteran owned business, women owned business',
