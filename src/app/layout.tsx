@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Luxury Living in Las Vegas',
     images: ['/images/og-image.jpg'],
   },
+  // Add Google verification when available
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
