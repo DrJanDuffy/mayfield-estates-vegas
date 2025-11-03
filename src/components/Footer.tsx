@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="space-y-2">
               <p className="text-gray-300">Las Vegas, NV</p>
               <p className="text-gray-300">Phone: (702) 500-1953</p>
-              <p className="text-gray-300">Email: DrDuffy@bhhsnv.com</p>
+              <p className="text-gray-300">Email: DrDuffySells@MayfieldEstatesLasVegas.com</p>
               <div className="flex items-center gap-2 mt-4">
                 <div className="flex items-center bg-blue-900 px-3 py-1 rounded-full">
                   <span className="text-xs">Veteran-Owned</span>
