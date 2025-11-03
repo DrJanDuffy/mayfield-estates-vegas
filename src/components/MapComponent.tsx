@@ -203,7 +203,7 @@ export default function MapComponent() {
         {
           location,
           radius: 5000,
-          type: ["point_of_interest"]
+          type: "point_of_interest"
         },
         (results, status) => {
           if (status === google.maps.places.PlacesServiceStatus.OK && results) {
@@ -289,7 +289,7 @@ export default function MapComponent() {
 
   const calculateDistances = (origin: google.maps.LatLng, destinations: google.maps.places.PlaceResult[]) => {
     const service = new google.maps.DistanceMatrixService();
-    const destinationLocations = destinations.map(place => place.geometry!.location);
+    const destinationLocations = destinations.map(place => place.geometry!.location).filter((loc): loc is google.maps.LatLng => loc !== null && loc !== undefined);
     
     service.getDistanceMatrix(
       {
@@ -415,7 +415,7 @@ export default function MapComponent() {
       button.classList.remove("active");
     });
     
-    let buttonId;
+    let buttonId: string | undefined;
     switch (mode) {
       case google.maps.TravelMode.DRIVING:
         buttonId = "drive-mode";
@@ -428,7 +428,9 @@ export default function MapComponent() {
         break;
     }
     
-    document.getElementById(buttonId)?.classList.add("active");
+    if (buttonId) {
+      document.getElementById(buttonId)?.classList.add("active");
+    }
     
     if (selectedLocation && userLocation && markers[selectedLocation.index + 1]) {
       getDirections(userLocation, markers[selectedLocation.index + 1].getPosition()!);

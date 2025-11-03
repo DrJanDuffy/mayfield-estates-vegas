@@ -66,14 +66,14 @@ export default function HomeValuePage() {
             d = document, 
             s = 'script', 
             x, 
-            y; 
+            y: HTMLScriptElement; 
         w['__hb_namespace'] = h; 
         w[h] = w[h] || function () { 
           (w[h].q=w[h].q||[]).push(arguments) 
         }; 
-        y = d.createElement(s); 
+        y = d.createElement(s) as HTMLScriptElement; 
         x = d.getElementsByTagName(s)[0]; 
-        y.async = 1; 
+        y.async = true; 
         y.src = b; 
         x?.parentNode?.insertBefore(y,x);
       })('Homebot','https://embed.homebotapp.com/lgw/v1/widget.js');
@@ -101,7 +101,7 @@ export default function HomeValuePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900">
-              Get Your Home's Value
+              Get Your Home&apos;s Value
             </h1>
             <p className="mt-4 text-xl text-gray-600">
               Discover the current market value of your Mayfield Estates property

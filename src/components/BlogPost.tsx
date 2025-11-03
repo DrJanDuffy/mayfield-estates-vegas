@@ -11,7 +11,7 @@ export function BlogPost({ post }: { post: RSSPost }) {
         {post.image ? (
           <Image
             src={post.image}
-            alt={post.imageAlt}
+            alt={post.imageAlt || post.title}
             fill
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

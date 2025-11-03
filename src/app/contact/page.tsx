@@ -22,9 +22,9 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Dr. Jan Duffy",
-    "image": "https://mayfieldestateslasvegas.com/DrJanDuffywithGooldCircle.jpg",
+    "image": "https://www.mayfieldestateslasvegas.com/DrJanDuffywithGooldCircle.jpg",
     "description": "Mayfield Estates Las Vegas specialist. Veteran-owned and women-owned real estate business providing expert guidance for luxury homes and estates in this premier gated community.",
-    "url": "https://mayfieldestateslasvegas.com",
+    "url": "https://www.mayfieldestateslasvegas.com",
     "telephone": "+1-702-XXX-XXXX",
     "email": "DrDuffy@bhhsnv.com",
     "address": {
@@ -273,7 +273,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="interest" className="block text-sm font-medium text-gray-700">
-                    I'm interested in
+                    I&apos;m interested in
                   </label>
                   <select
                     id="interest"

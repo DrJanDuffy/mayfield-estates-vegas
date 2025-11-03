@@ -23,5 +23,16 @@ declare namespace JSX {
       'property-types': string;
       suppressHydrationWarning?: boolean;
     };
+    'realscout-simple-search': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+      'agent-encoded-id': string;
+      'placeholder'?: string;
+      suppressHydrationWarning?: boolean;
+    };
+    'realscout-featured-listing': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+      'agent-encoded-id': string;
+      'listing-id': string;
+      'show-contact-form'?: string;
+      suppressHydrationWarning?: boolean;
+    };
   }
 } 

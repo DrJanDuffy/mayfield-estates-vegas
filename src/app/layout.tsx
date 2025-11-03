@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: process.env.NEXT_PUBLIC_SITE_NAME || 'Mayfield Estates Las Vegas',
     description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Luxury Living in Las Vegas',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://mayfieldestates.com',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mayfieldestateslasvegas.com',
     siteName: process.env.NEXT_PUBLIC_SITE_NAME || 'Mayfield Estates Las Vegas',
     images: [
       {

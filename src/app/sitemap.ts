@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://mayfieldestateslasvegas.com'
+  const baseUrl = 'https://www.mayfieldestateslasvegas.com'
   
   // Core pages
   const routes = [

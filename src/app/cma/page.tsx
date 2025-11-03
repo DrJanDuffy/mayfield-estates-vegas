@@ -117,7 +117,7 @@ export default function CMAPage() {
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-semibold text-gray-900">Professional Insights</h3>
-                      <p className="mt-2 text-gray-600">Receive expert analysis of your home's unique features and how they impact its market value.</p>
+                      <p className="mt-2 text-gray-600">Receive expert analysis of your home&apos;s unique features and how they impact its market value.</p>
                     </div>
                   </div>
 
@@ -142,7 +142,7 @@ export default function CMAPage() {
                 <div className="relative bg-white p-8 rounded-2xl shadow-xl">
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold text-gray-900">Request Your Free CMA</h3>
-                    <p className="mt-2 text-gray-600">Complete, professional analysis of your home's value</p>
+                    <p className="mt-2 text-gray-600">Complete, professional analysis of your home&apos;s value</p>
                   </div>
                   
                   {/* CloudCMA Widget */}

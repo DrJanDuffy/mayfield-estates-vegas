@@ -181,7 +181,7 @@ export default function InteractiveMap({ filters, onNeighborhoodSelect }: Intera
           </div>
 
           <blockquote className="text-sm italic text-gray-600 border-l-4 border-blue-600 pl-4 mb-4">
-            "{dataCard.expertQuote}"
+            &ldquo;{dataCard.expertQuote}&rdquo;
           </blockquote>
 
           {showLeadForm ? (
