@@ -142,7 +142,7 @@
 - [x] Google Search Console ready (verification tag added)
 
 ### Post-Deployment
-- [ ] Submit sitemap to Google Search Console
+- [x] Submit sitemap to Google Search Console
 - [ ] Monitor initial crawl and indexing
 - [ ] Test all forms in production
 - [ ] Verify all external widget integrations
