@@ -22,46 +22,91 @@ export default function Home() {
         </div>
 
         {/* Hero Section */}
-        <header className="relative flex items-center justify-center text-white text-center" style={{ height: "80vh", marginTop: "64px" }}>
+        <header className="relative flex items-center justify-center text-white text-center overflow-hidden" style={{ height: "90vh", marginTop: "64px" }}>
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/hero-1.jpg"
-              alt="Mayfield Estates Las Vegas"
+              src="/Back Exterior001-024-009-4200x2800.jpg"
+              alt="Luxury Mayfield Estates Las Vegas luxury home exterior"
               fill
               priority
               style={{ objectFit: 'cover' }}
-              className="opacity-90"
+              className="opacity-95"
             />
-            {/* Dark overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+            {/* Sophisticated gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/60"></div>
+            {/* Subtle texture overlay */}
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoNDAwdjQwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-20"></div>
           </div>
           
           {/* Content */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm font-medium">Luxury Gated Community</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl tracking-tight">
                 Welcome to Mayfield Estates
               </h1>
-              <p className="text-xl md:text-3xl mb-8 drop-shadow-md">
-                Luxury Living in Las Vegas
+              <p className="text-2xl md:text-4xl mb-4 font-light drop-shadow-lg text-blue-100">
+                Luxury Living in the Heart of Las Vegas
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-blue-50 drop-shadow-md">
+                Discover unrivaled luxury homes in Las Vegas&apos;s most exclusive gated community
+              </p>
+              
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <Link 
                   href="/cma" 
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg"
+                  className="group bg-white text-blue-600 px-10 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all shadow-2xl hover:shadow-blue-500/25 hover:scale-105 flex items-center gap-2"
                 >
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                   Get Your Home Value
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors shadow-lg"
+                  className="border-2 border-white text-white px-10 py-4 rounded-xl font-semibold hover:bg-white/10 backdrop-blur-sm transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
                 >
-                  Contact Us
+                  Contact Dr. Jan Duffy
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
+              </div>
+
+              {/* Trust indicators */}
+              <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-sm">
+                <div className="flex items-center gap-2 text-blue-100">
+                  <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Veteran & Women-Owned</span>
+                </div>
+                <div className="flex items-center gap-2 text-blue-100">
+                  <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>15+ Years Experience</span>
+                </div>
+                <div className="flex items-center gap-2 text-blue-100">
+                  <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Expert Local Knowledge</span>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Bottom gradient fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
         </header>
 
         {/* About Section */}
