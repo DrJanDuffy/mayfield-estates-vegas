@@ -1,11 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export function Navigation() {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isActive = (path: string) => {
     return pathname === path ? 'text-blue-600' : 'text-gray-900';
@@ -24,7 +26,7 @@ export function Navigation() {
               className="h-12 w-auto"
             />
           </Link>
-          <div className="flex items-center space-x-1 sm:space-x-4">
+          <div className="hidden md:flex items-center space-x-1 sm:space-x-4">
             <Link 
               href="/" 
               className={`flex items-center px-3 py-2 ${isActive('/')} hover:text-blue-600`}
@@ -57,7 +59,7 @@ export function Navigation() {
             </Link>
           </div>
           
-          <div className="flex items-center">
+          <div className="hidden md:flex items-center">
             <Link
               href="/contact"
               className={`inline-flex items-center px-4 py-2 border ${
@@ -69,7 +71,73 @@ export function Navigation() {
               Contact Dr. Jan Duffy
             </Link>
           </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+            >
+              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+              <Link
+                href="/"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                href="/home-value"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/home-value') ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home Value
+              </Link>
+              <Link
+                href="/cma"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/cma') ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Request CMA
+              </Link>
+              <Link
+                href="/blog"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/blog') ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link
+                href="/las-vegas-neighborhoods"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/las-vegas-neighborhoods') ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Neighborhoods
+              </Link>
+              <Link
+                href="/contact"
+                className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 text-center"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact Dr. Jan Duffy
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
