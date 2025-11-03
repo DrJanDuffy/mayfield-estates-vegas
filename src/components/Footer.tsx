@@ -11,7 +11,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Dr. Jan Duffy</h3>
             <div className="space-y-2">
               <p className="text-gray-300">Las Vegas, NV</p>
-              <p className="text-gray-300">Phone: 702-XXX-XXXX</p>
+              <p className="text-gray-300">Phone: (702) 500-1953</p>
               <p className="text-gray-300">Email: DrDuffy@bhhsnv.com</p>
               <div className="flex items-center gap-2 mt-4">
                 <div className="flex items-center bg-blue-900 px-3 py-1 rounded-full">

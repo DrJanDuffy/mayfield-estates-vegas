@@ -47,7 +47,7 @@ export default function RootLayout({
     "name": "Mayfield Estates Las Vegas Real Estate",
     "image": "https://www.mayfieldestateslasvegas.com/logo.png",
     "url": "https://www.mayfieldestateslasvegas.com",
-    "telephone": "+1-702-XXX-XXXX",
+    "telephone": "+1-702-500-1953",
     "email": "DrDuffy@bhhsnv.com",
     "address": {
       "@type": "PostalAddress",
