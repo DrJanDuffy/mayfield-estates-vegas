@@ -13,10 +13,11 @@ export default function CMAPage() {
     "description": "Get a detailed Comparative Market Analysis from a local expert. Our professional CMA includes in-depth analysis of comparable properties, market trends, and optimal pricing strategy.",
     "provider": {
       "@type": "RealEstateAgent",
-      "name": "Las Vegas Real Estate",
+      "name": "Dr. Jan Duffy",
       "areaServed": {
         "@type": "City",
-        "name": "Las Vegas"
+        "name": "Las Vegas",
+        "state": "NV"
       }
     },
     "serviceType": "Real Estate Market Analysis",
@@ -54,6 +55,45 @@ export default function CMAPage() {
     }
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Comparative Market Analysis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A CMA is a detailed report that compares your property to similar homes in the area that have recently sold, are currently listed, or have failed to sell. It helps determine your home's fair market value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a CMA take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typically, a professional CMA for Las Vegas luxury homes takes 24-48 hours to complete. The analysis includes thorough research of comparable properties in Mayfield Estates and surrounding areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What information is included in a CMA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our CMA reports include comparable property sales, current market trends, neighborhood analysis, pricing recommendations, and recommendations for maximizing your property's value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a CMA different from an appraisal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A CMA is provided by a real estate agent and focuses on market analysis, while an official appraisal is conducted by a licensed appraiser for lending purposes. Both tools help determine property value."
+        }
+      }
+    ]
+  };
+
   useEffect(() => {
     // Cleanup function to remove any existing widget script
     return () => {
@@ -70,6 +110,11 @@ export default function CMAPage() {
         id="structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <Script 
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div className="min-h-screen bg-gray-50">
         {/* Navigation */}
