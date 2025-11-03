@@ -5,6 +5,7 @@ import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 // Main page component for Mayfield Estates Las Vegas
 export default function Home() {
@@ -136,15 +137,8 @@ export default function Home() {
           </div>
         </section>
         
-        {/* Contact Section */}
-        <section id="contact" className="py-20 bg-indigo-800 text-white">
-          {/* Contact content here */}
-        </section>
-        
         {/* Footer */}
-        <footer className="bg-gray-900 text-white py-10">
-          {/* Footer content here */}
-        </footer>
+        <Footer />
       </div>
     </>
   );
