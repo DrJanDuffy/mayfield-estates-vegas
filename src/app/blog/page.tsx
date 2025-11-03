@@ -61,9 +61,24 @@ export default function BlogPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Las Vegas Real Estate Blog
           </h1>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl">
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl">
             Stay informed about the Las Vegas real estate market with our latest insights, tips, and expert analysis from Dr. Jan Duffy, your trusted Mayfield Estates specialist.
           </p>
+          
+          {/* SEO Rich Content */}
+          <div className="bg-white rounded-lg shadow-md p-8 mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Expert Las Vegas Real Estate Insights</h2>
+            <p className="text-gray-700 mb-4">
+              As a seasoned real estate professional specializing in Mayfield Estates and luxury properties throughout Las Vegas, 
+              I bring you market-tested strategies and local knowledge to help you navigate the competitive Las Vegas housing market. 
+              Whether you&apos;re buying your first luxury home in Summerlin, selling an estate property in Mayfield Estates, 
+              or exploring investment opportunities in Green Valley, our blog provides actionable insights backed by years of experience.
+            </p>
+            <p className="text-gray-700">
+              From understanding HOA restrictions and neighborhood amenities to navigating market trends and pricing strategies, 
+              we cover everything you need to make informed decisions about luxury real estate in Las Vegas, Nevada.
+            </p>
+          </div>
 
           <Suspense fallback={<BlogSkeleton />}>
             <BlogPosts />

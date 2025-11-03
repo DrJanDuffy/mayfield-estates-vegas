@@ -187,6 +187,39 @@ export default function CMAPage() {
           </div>
         </div>
 
+        {/* FAQ Section */}
+        <div className="bg-white py-16 border-t">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions About CMA Reports</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">What is a Comparative Market Analysis?</h3>
+                <p className="text-gray-600">
+                  A CMA is a detailed report that compares your property to similar homes in the area that have recently sold, are currently listed, or have failed to sell. It helps determine your home&apos;s fair market value.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">How long does a CMA take?</h3>
+                <p className="text-gray-600">
+                  Typically, a professional CMA for Las Vegas luxury homes takes 24-48 hours to complete. The analysis includes thorough research of comparable properties in Mayfield Estates and surrounding areas.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">What information is included in a CMA?</h3>
+                <p className="text-gray-600">
+                  Our CMA reports include comparable property sales, current market trends, neighborhood analysis, pricing recommendations, and recommendations for maximizing your property&apos;s value.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Is a CMA different from an appraisal?</h3>
+                <p className="text-gray-600">
+                  Yes. A CMA is provided by a real estate agent and focuses on market analysis, while an official appraisal is conducted by a licensed appraiser for lending purposes. Both tools help determine property value.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* CloudCMA Script */}
         <Script
           id="cloudcma_api_widget_script"
