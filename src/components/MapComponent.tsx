@@ -138,6 +138,8 @@ export default function MapComponent() {
         }
       }
     });
+  // Intentionally run once when map is ready; deps would re-run setup on every render
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleLocationError = (browserHasGeolocation: boolean, pos: google.maps.LatLng) => {

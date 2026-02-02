@@ -1,0 +1,2 @@
+# Type declarations (Next rule fails on .d.ts)
+**/*.d.ts

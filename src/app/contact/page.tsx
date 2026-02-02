@@ -12,12 +12,42 @@ export default function ContactPage() {
     email: '',
     phone: '',
     message: '',
-    interest: 'buying'
+    interest: 'buying',
+    preferredTime: ''
   });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic will be implemented here
+    setStatus('sending');
+    setStatusMessage('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || undefined,
+          message: formData.message || undefined,
+          interest: formData.interest,
+          preferredTime: formData.preferredTime || undefined
+        })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setStatus('error');
+        setStatusMessage(data.error || 'Something went wrong. Please try again.');
+        return;
+      }
+      setStatus('success');
+      setStatusMessage(data.message || 'Thank you! We will be in touch soon.');
+      setFormData({ name: '', email: '', phone: '', message: '', interest: 'buying', preferredTime: '' });
+    } catch {
+      setStatus('error');
+      setStatusMessage('Unable to send. Please try again or call (702) 500-1953.');
+    }
   };
 
   const businessSchema = {
@@ -126,10 +156,13 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Contact Dr. Jan Duffy
+                Schedule a Free Consultation
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100">
+              <p className="text-xl md:text-2xl text-blue-100 mb-2">
                 Your Trusted Las Vegas Real Estate Expert
+              </p>
+              <p className="text-blue-200 max-w-xl mx-auto">
+                Book a call with Dr. Jan Duffy—discuss your goals, get a home value, or tour Mayfield Estates. Responds within 24 hours.
               </p>
             </div>
           </div>
@@ -161,16 +194,16 @@ export default function ContactPage() {
 
                 <div className="space-y-4">
                   <div className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    (702) 500-1953
+                    <a href="tel:+17025001953" className="text-blue-600 hover:text-blue-800 font-medium">(702) 500-1953</a>
                   </div>
                   <div className="flex items-center text-gray-600">
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    DrDuffySells@MayfieldEstatesLasVegas.com
+                    <a href="mailto:DrDuffySells@MayfieldEstatesLasVegas.com" className="text-blue-600 hover:text-blue-800 break-all">DrDuffySells@MayfieldEstatesLasVegas.com</a>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -233,7 +266,18 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Book Your Free Consultation</h2>
+              <p className="text-gray-600 mb-6">Tell us a bit about yourself and your preferred time for a call. Dr. Jan Duffy typically responds within 24 hours.</p>
+              {status === 'success' && (
+                <div className="mb-6 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800" role="alert">
+                  {statusMessage}
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="mb-6 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800" role="alert">
+                  {statusMessage}
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -299,6 +343,21 @@ export default function ContactPage() {
                 </div>
 
                 <div>
+                  <label htmlFor="preferredTime" className="block text-sm font-medium text-gray-700">
+                    Preferred day/time for a call
+                  </label>
+                  <input
+                    type="text"
+                    id="preferredTime"
+                    name="preferredTime"
+                    placeholder="e.g. Weekday morning, Saturday afternoon"
+                    value={formData.preferredTime}
+                    onChange={(e) => setFormData({...formData, preferredTime: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                     Message
                   </label>
@@ -309,15 +368,16 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                    required
+                    placeholder="What would you like to discuss? Buying, selling, or a home value?"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  disabled={status === 'sending'}
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {status === 'sending' ? 'Sending…' : 'Request My Free Consultation'}
                 </button>
               </form>
             </div>

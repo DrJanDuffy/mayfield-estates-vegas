@@ -68,7 +68,7 @@ export function Navigation() {
                   : 'border-transparent text-white bg-blue-600 hover:bg-blue-700'
               } text-sm font-medium rounded-md transition-colors`}
             >
-              Contact Dr. Jan Duffy
+              Book a Call
             </Link>
           </div>
 
@@ -133,7 +133,7 @@ export function Navigation() {
                 className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Contact Dr. Jan Duffy
+                Book a Call
               </Link>
             </div>
           </div>

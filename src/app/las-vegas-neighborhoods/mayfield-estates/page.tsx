@@ -308,17 +308,18 @@ export default function MayfieldEstatesPage() {
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h2 className="text-3xl font-bold mb-4">
-                Find Your Home in Mayfield Estates
+                Schedule a Tour or Get Your Home Value
               </h2>
               <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                As a Mayfield Estates specialist, I can help you find or sell your perfect home in this established community.
+                Book a free consultation with Dr. Jan Duffy—tour Mayfield Estates, get a CMA, or discuss buying or selling. Responds within 24 hours.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors shadow-lg"
+                  className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors shadow-lg inline-flex items-center justify-center gap-2"
                 >
-                  Contact Dr. Jan Duffy
+                  Book a Free Call
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                 </Link>
                 <Link
                   href="/cma"

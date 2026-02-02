@@ -11,8 +11,17 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Dr. Jan Duffy</h3>
             <div className="space-y-2">
               <p className="text-gray-300">Las Vegas, NV</p>
-              <p className="text-gray-300">Phone: (702) 500-1953</p>
-              <p className="text-gray-300">Email: DrDuffySells@MayfieldEstatesLasVegas.com</p>
+              <p className="text-gray-300">
+                Phone: <a href="tel:+17025001953" className="text-white hover:text-blue-300 underline">(702) 500-1953</a>
+              </p>
+              <p className="text-gray-300">
+                Email: <a href="mailto:DrDuffySells@MayfieldEstatesLasVegas.com" className="text-white hover:text-blue-300 underline break-all">DrDuffySells@MayfieldEstatesLasVegas.com</a>
+              </p>
+              <div className="mt-4">
+                <Link href="/contact" className="inline-block bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                  Schedule a Call
+                </Link>
+              </div>
               <div className="flex items-center gap-2 mt-4">
                 <div className="flex items-center bg-blue-900 px-3 py-1 rounded-full">
                   <span className="text-xs">Veteran-Owned</span>
