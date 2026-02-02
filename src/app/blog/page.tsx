@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { BlogPost } from '@/components/BlogPost';
 import { NewsletterForm } from '@/components/NewsletterForm';
 import { fetchRSSFeed, type RSSPost } from '@/utils/rss';
@@ -8,6 +9,7 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Las Vegas Real Estate Blog | Market Insights & Tips | Mayfield Estates',
   description: 'Expert Las Vegas real estate market insights, home buying tips, selling strategies, and local market trends from Dr. Jan Duffy, your Mayfield Estates specialist.',
+  alternates: { canonical: '/blog' },
   openGraph: {
     title: 'Las Vegas Real Estate Blog | Expert Market Insights',
     description: 'Stay informed about the Las Vegas real estate market with expert insights and tips.',
@@ -32,8 +34,15 @@ export default async function BlogPage() {
       <div className="fixed w-full z-10">
         <Navigation />
       </div>
-      <div className="pt-16">
+      <div className="pt-16" id="main-content">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <nav className="mb-6 text-sm text-gray-600" aria-label="Breadcrumb">
+            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <li><Link href="/" className="hover:text-blue-600">Home</Link></li>
+              <li aria-hidden="true">/</li>
+              <li className="text-gray-900 font-medium" aria-current="page">Blog</li>
+            </ol>
+          </nav>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Las Vegas Real Estate Blog
           </h1>

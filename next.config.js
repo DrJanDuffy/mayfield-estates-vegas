@@ -4,6 +4,18 @@ const MAYFIELD_DEST = '/las-vegas-neighborhoods/mayfield-estates';
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+        ],
+      },
+    ];
+  },
   // Redirect old /mayfield-estates/* URLs (404 in GSC) to canonical page
   async redirects() {
     return [

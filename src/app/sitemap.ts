@@ -22,12 +22,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/las-vegas-neighborhoods/henderson',
     '/las-vegas-neighborhoods/north-las-vegas',
     '/las-vegas-neighborhoods/mayfield-estates',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: route.startsWith('/las-vegas-neighborhoods') ? 'weekly' as const : 'daily' as const,
-    priority: route === '' ? 1 : route.startsWith('/las-vegas-neighborhoods/mayfield-estates') ? 0.9 : 0.8,
-  }))
+  ].map((route) => {
+    const isHome = route === '';
+    const isKeyPage = ['/about', '/contact', '/las-vegas-neighborhoods/mayfield-estates'].includes(route);
+    const isNeighborhood = route.startsWith('/las-vegas-neighborhoods');
+    const priority = isHome ? 1 : isKeyPage ? 0.9 : route === '/blog' ? 0.7 : isNeighborhood ? 0.85 : 0.8;
+    return {
+      url: `${baseUrl}${route}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: isNeighborhood ? 'weekly' as const : route === '/blog' ? 'daily' as const : 'weekly' as const,
+      priority,
+    };
+  })
 
   // Add dynamic routes here when implemented
   // Example: blog posts, listings, neighborhood pages

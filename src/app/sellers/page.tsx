@@ -9,7 +9,7 @@ export default function SellersPage() {
       <div className="fixed w-full z-10">
         <Navigation />
       </div>
-      <main className="pt-16">
+      <main id="main-content" className="pt-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <nav className="mb-6 text-sm text-gray-600" aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">

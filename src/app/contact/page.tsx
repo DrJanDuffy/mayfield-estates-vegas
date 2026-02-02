@@ -127,7 +127,7 @@ export default function ContactPage() {
           <Navigation />
         </div>
         
-        <main className="pt-16">
+        <main id="main-content" className="pt-16">
         {/* Hero Section - unique content for indexing */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

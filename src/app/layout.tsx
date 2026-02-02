@@ -46,10 +46,10 @@ export default function RootLayout({
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://www.mayfieldestateslasvegas.com/#organization",
+    "@id": `${siteUrl}/#organization`,
     "name": "Mayfield Estates Las Vegas Real Estate",
-    "image": "https://www.mayfieldestateslasvegas.com/images/logos/logo.png",
-    "url": "https://www.mayfieldestateslasvegas.com",
+    "image": `${siteUrl}/images/logos/logo.png`,
+    "url": siteUrl,
     "telephone": "+1-702-500-1953",
     "email": "DrDuffySells@MayfieldEstatesLasVegas.com",
     "address": {
@@ -130,6 +130,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} bg-gray-50`}>
+        <a href="#main-content" className="absolute -left-[9999px] focus:left-4 focus:top-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-md focus:outline-none">
+          Skip to main content
+        </a>
         <Analytics />
         {children}
         <CalendlyGlobal />

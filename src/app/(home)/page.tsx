@@ -26,8 +26,8 @@ export default function Home() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0 min-h-full w-full">
             <Image
-              src="/images/hero/market-featured.jpg"
-              alt="Luxury home in Mayfield Estates Las Vegas—exclusive gated community with desert landscaping and mountain views"
+              src="/images/hero/Water_DrJan1.JPG"
+              alt="Dr. Jan Duffy, Mayfield Estates Las Vegas real estate—luxury gated community and water features"
               fill
               priority
               sizes="100vw"
@@ -109,7 +109,7 @@ export default function Home() {
         </header>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-white">
+        <section id="main-content" className="py-20 bg-white" aria-label="About Mayfield Estates">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>

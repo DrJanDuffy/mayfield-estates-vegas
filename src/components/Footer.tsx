@@ -89,13 +89,30 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* RealScout Links */}
+          {/* Resources */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li>Property Listings</li>
-              <li>Market Analysis</li>
-              <li>Real Estate Insights</li>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/las-vegas-neighborhoods" className="text-gray-300 hover:text-white transition-colors">
+                  Las Vegas Neighborhoods
+                </Link>
+              </li>
+              <li>
+                <Link href="/value" className="text-gray-300 hover:text-white transition-colors">
+                  Property Listings
+                </Link>
+              </li>
+              <li>
+                <Link href="/home-value" className="text-gray-300 hover:text-white transition-colors">
+                  Market Analysis
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                  Real Estate Insights
+                </Link>
+              </li>
             </ul>
             <div className="mt-4">
               <Link href="https://www.bhhsnv.com/agent/dr-jan-duffy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors text-sm">
