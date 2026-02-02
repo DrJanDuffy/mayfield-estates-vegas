@@ -7,6 +7,21 @@ import Footer from '@/components/Footer';
 import { CalendlySection } from '@/components/CalendlySection';
 
 export default function ContactPage() {
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Dr. Jan Duffy - Mayfield Estates Las Vegas",
+    "description": "Contact Dr. Jan Duffy for Mayfield Estates and Las Vegas luxury real estate. Schedule a free consultation, get a home value, or tour luxury properties.",
+    "url": "https://www.mayfieldestateslasvegas.com/contact",
+    "mainEntity": {
+      "@type": "RealEstateAgent",
+      "name": "Dr. Jan Duffy",
+      "telephone": "+1-702-500-1953",
+      "email": "DrDuffySells@MayfieldEstatesLasVegas.com",
+      "areaServed": { "@type": "Place", "name": "Mayfield Estates, Las Vegas, NV" }
+    }
+  };
+
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
@@ -97,6 +112,11 @@ export default function ContactPage() {
   return (
     <>
       <Script 
+        id="contact-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+      <Script 
         id="business-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
@@ -108,18 +128,18 @@ export default function ContactPage() {
         </div>
         
         <main className="pt-16">
-        {/* Hero Section */}
+        {/* Hero Section - unique content for indexing */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Schedule a Free Consultation
+                Contact Dr. Jan Duffy | Mayfield Estates Las Vegas
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-2">
                 Your Trusted Las Vegas Real Estate Expert
               </p>
-              <p className="text-blue-200 max-w-xl mx-auto">
-                Book a call with Dr. Jan Duffy—discuss your goals, get a home value, or tour Mayfield Estates. Responds within 24 hours.
+              <p className="text-blue-200 max-w-2xl mx-auto">
+                Contact Dr. Jan Duffy for Mayfield Estates and Las Vegas luxury real estate. Schedule a free consultation, get a home value report, or tour luxury properties. Call (702) 500-1953 or book online. Veteran-owned and women-owned. Responds within 24 hours.
               </p>
             </div>
           </div>

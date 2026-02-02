@@ -7,14 +7,16 @@ import { CalendlyGlobal } from '@/components/CalendlyGlobal';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mayfieldestateslasvegas.com';
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mayfieldestateslasvegas.com'),
+  metadataBase: new URL(siteUrl),
   title: process.env.NEXT_PUBLIC_SITE_NAME || 'Mayfield Estates Las Vegas Real Estate | Dr. Jan Duffy, REALTOR®',
   description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Expert Mayfield Estates Las Vegas real estate agent. Luxury homes for sale, market analysis, and professional guidance in this exclusive gated community. Veteran & women-owned.',
   openGraph: {
     title: process.env.NEXT_PUBLIC_SITE_NAME || 'Mayfield Estates Las Vegas',
     description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Luxury Living in Las Vegas',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mayfieldestateslasvegas.com',
+    url: siteUrl,
     siteName: process.env.NEXT_PUBLIC_SITE_NAME || 'Mayfield Estates Las Vegas',
     images: [
       {
