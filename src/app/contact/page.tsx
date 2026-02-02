@@ -2,54 +2,11 @@
 
 import Script from 'next/script';
 import Image from 'next/image';
-import { useState } from 'react';
 import { Navigation } from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { CalendlySection } from '@/components/CalendlySection';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    interest: 'buying',
-    preferredTime: ''
-  });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [statusMessage, setStatusMessage] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
-    setStatusMessage('');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || undefined,
-          message: formData.message || undefined,
-          interest: formData.interest,
-          preferredTime: formData.preferredTime || undefined
-        })
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setStatus('error');
-        setStatusMessage(data.error || 'Something went wrong. Please try again.');
-        return;
-      }
-      setStatus('success');
-      setStatusMessage(data.message || 'Thank you! We will be in touch soon.');
-      setFormData({ name: '', email: '', phone: '', message: '', interest: 'buying', preferredTime: '' });
-    } catch {
-      setStatus('error');
-      setStatusMessage('Unable to send. Please try again or call (702) 500-1953.');
-    }
-  };
-
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
@@ -264,122 +221,9 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Calendly: Schedule time with our team */}
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Book Your Free Consultation</h2>
-              <p className="text-gray-600 mb-6">Tell us a bit about yourself and your preferred time for a call. Dr. Jan Duffy typically responds within 24 hours.</p>
-              {status === 'success' && (
-                <div className="mb-6 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800" role="alert">
-                  {statusMessage}
-                </div>
-              )}
-              {status === 'error' && (
-                <div className="mb-6 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800" role="alert">
-                  {statusMessage}
-                </div>
-              )}
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="interest" className="block text-sm font-medium text-gray-700">
-                    I&apos;m interested in
-                  </label>
-                  <select
-                    id="interest"
-                    name="interest"
-                    value={formData.interest}
-                    onChange={(e) => setFormData({...formData, interest: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  >
-                    <option value="buying">Buying a Property</option>
-                    <option value="selling">Selling a Property</option>
-                    <option value="investing">Real Estate Investment</option>
-                    <option value="valuation">Property Valuation</option>
-                    <option value="other">Other Services</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="preferredTime" className="block text-sm font-medium text-gray-700">
-                    Preferred day/time for a call
-                  </label>
-                  <input
-                    type="text"
-                    id="preferredTime"
-                    name="preferredTime"
-                    placeholder="e.g. Weekday morning, Saturday afternoon"
-                    value={formData.preferredTime}
-                    onChange={(e) => setFormData({...formData, preferredTime: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="What would you like to discuss? Buying, selling, or a home value?"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={status === 'sending'}
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {status === 'sending' ? 'Sending…' : 'Request My Free Consultation'}
-                </button>
-              </form>
+              <CalendlySection height={700} compact />
             </div>
           </div>
         </div>

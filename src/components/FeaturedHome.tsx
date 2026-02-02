@@ -55,6 +55,9 @@ export default function FeaturedHome() {
         show-contact-form="true"
         show-similar-homes="true"
       />
+      <p className="mt-4 text-sm text-gray-500" role="contentinfo">
+        Listing data deemed reliable but not guaranteed. All listings courtesy of the participant&apos;s MLS. © Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.
+      </p>
     </div>
   );
 } 

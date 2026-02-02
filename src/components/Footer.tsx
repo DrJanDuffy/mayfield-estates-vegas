@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { CalendlyPopupLink } from '@/components/CalendlyPopupLink';
 
 export default function Footer() {
   return (
@@ -18,9 +19,12 @@ export default function Footer() {
                 Email: <a href="mailto:DrDuffySells@MayfieldEstatesLasVegas.com" className="text-white hover:text-blue-300 underline break-all">DrDuffySells@MayfieldEstatesLasVegas.com</a>
               </p>
               <div className="mt-4">
-                <Link href="/contact" className="inline-block bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
-                  Schedule a Call
-                </Link>
+                <CalendlyPopupLink
+                  as="a"
+                  className="inline-block bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+                >
+                  Book your free 15‑min call
+                </CalendlyPopupLink>
               </div>
               <div className="flex items-center gap-2 mt-4">
                 <div className="flex items-center bg-blue-900 px-3 py-1 rounded-full">

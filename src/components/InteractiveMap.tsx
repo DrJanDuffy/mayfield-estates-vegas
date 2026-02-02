@@ -1,10 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Script from 'next/script';
 import { neighborhoodData } from '@/data/neighborhoods';
 import { crmService } from '@/services/crm';
-import LeadForm from './LeadForm';
-import { toast } from 'react-hot-toast';
 
 interface InteractiveMapProps {
   filters: {
@@ -31,7 +30,7 @@ interface NeighborhoodDataCard {
 export default function InteractiveMap({ filters, onNeighborhoodSelect }: InteractiveMapProps) {
   const [activeNeighborhood, setActiveNeighborhood] = useState<string | null>(null);
   const [dataCard, setDataCard] = useState<NeighborhoodDataCard | null>(null);
-  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [showCalendly, setShowCalendly] = useState(false);
 
   const handleNeighborhoodClick = async (neighborhood: string) => {
     setActiveNeighborhood(neighborhood);
@@ -63,15 +62,6 @@ export default function InteractiveMap({ filters, onNeighborhoodSelect }: Intera
     const priceRatio = Math.min(data.medianPrice / maxPrice, 1);
     const blueIntensity = Math.floor(255 * (1 - priceRatio));
     return `rgb(0, ${blueIntensity}, 255)`;
-  };
-
-  const handleLeadFormSuccess = () => {
-    setShowLeadForm(false);
-    toast.success('Thank you! We will be in touch shortly.');
-  };
-
-  const handleLeadFormError = (message: string) => {
-    toast.error(message);
   };
 
   return (
@@ -184,15 +174,19 @@ export default function InteractiveMap({ filters, onNeighborhoodSelect }: Intera
             &ldquo;{dataCard.expertQuote}&rdquo;
           </blockquote>
 
-          {showLeadForm ? (
-            <LeadForm
-              neighborhood={dataCard.name}
-              onSuccess={handleLeadFormSuccess}
-              onError={handleLeadFormError}
-            />
+          {showCalendly ? (
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Want to learn more? Schedule time with our team now</h3>
+              <div
+                className="calendly-inline-widget rounded-lg overflow-hidden border border-gray-200"
+                data-url="https://calendly.com/drjanduffy/appointment"
+                style={{ minWidth: 280, height: 560 }}
+              />
+              <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
+            </div>
           ) : (
             <button
-              onClick={() => setShowLeadForm(true)}
+              onClick={() => setShowCalendly(true)}
               className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors"
             >
               Schedule Neighborhood Tour

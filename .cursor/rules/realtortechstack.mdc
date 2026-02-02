@@ -1,10 +1,59 @@
 ---
 description: Comprehensive rules for developing realtor websites with integrated RealScout listings, Homebot valuations, CloudCMA market analysis, and Percy.ai buyer tools. Optimized for lead generation and conversion.
-globs: {   "autoAttach": {     "filePatterns": [       "*.html",       "*.js",       "*.jsx",       "*.ts",       "*.tsx",       "*.css",       "*.scss"     ],     "folderPatterns": [       "src/*",       "public/*",       "components/*",       "pages/*"     ]   } }
+globs:
+  autoAttach:
+    filePatterns: ["*.html", "*.js", "*.jsx", "*.ts", "*.tsx", "*.css", "*.scss"]
+    folderPatterns: ["src/*", "public/*", "components/*", "pages/*"]
 alwaysApply: true
 ---
 
-# Your rule content
+# Dr. Jan Duffy Real Estate Projects
 
-- You can @ files here
-- You can use markdown but dont have to
+- **Agent:** Dr. Jan Duffy (NEVER "Janet"). License S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties.
+- **Phone:** Use `tel:+17025001953` links; always verify the correct number for this site. Display as (702) 500-1953 where appropriate.
+- **Before code changes:** Summarize task, assumptions, and plan; wait for confirmation when requested.
+- **Never** delete files or refactor without explicit approval.
+
+# IDX/MLS Compliance
+
+- **Always** display MLS disclaimer and listing attribution wherever listings (RealScout, IDX, or MLS data) are shown.
+- **Never** modify `/components/idx/*` without explicit approval.
+
+# RealScout Widget Integration (Next.js)
+
+- RealScout needs **two domains** in CSP if you add one: script loads from `em.realscout.com`, API calls go to `www.realscout.com`. Both must be in `script-src` and `connect-src`.
+- Load the RealScout script **once** globally (e.g. root layout); use `dangerouslySetInnerHTML` for widget markup where needed.
+- Do **not** load the script multiple times or use React state to re-mount widgets.
+
+# NAP, LocalBusiness & GBP
+
+- Every page must show business **name, address, phone (NAP)** matching the Google Business Profile (visible text and LocalBusiness schema).
+- Use localized **title**, **meta description**, and **H1** (business type, services, primary service area).
+- Apply **LocalBusiness** (or RealEstateAgent) **JSON-LD** on all pages; include hours and attributes that match GBP.
+- Provide **clickable** "Call," "Directions," and "View Google Reviews" where relevant; show business hours and map embed on contact/location pages.
+- Audit periodically for NAP accuracy, schema consistency, and GBP alignment.
+
+# External Feeds & APIs (Images)
+
+- When integrating feeds or APIs that include images: **extract image URLs** and display them; ensure CSP `img-src` allows the image domain if CSP is used.
+- For Next.js: add external image hosts to `images.remotePatterns` in `next.config.js` when using `next/image`; otherwise use a plain `<img>` for third-party images.
+
+# Calendly & Lead Conversion
+
+- Calendly inline and popup widgets: use `https://calendly.com/drjanduffy/appointment`. Load Calendly script once (e.g. layout); use floating badge and/or sticky CTA for visibility.
+- Prefer "Book your free 15‑min call" / "Schedule your free consultation" for CTAs.
+
+# Vercel & Cloudflare
+
+- When using Vercel, **do not** proxy through Cloudflare (orange cloud)—use DNS only (gray cloud) to avoid SSL conflicts.
+
+# Build & Development
+
+- Prefer **Vercel CLI** for production builds: `vercel build` or `vercel --prod`; for local dev, `vercel dev` when possible.
+- Do not run `pnpm build` / `npm run build` as the primary production build without alignment with deployment (Vercel).
+
+# Tech Stack
+
+- Next.js App Router, React, TypeScript, Tailwind CSS.
+- RealScout (listings), Homebot (valuations), CloudCMA (CMA), Percy.ai (buyer tools).
+- Follow 2026 SEO: E-E-A-T, JSON-LD (LocalBusiness, RealEstateListing), Core Web Vitals, GBP optimization.

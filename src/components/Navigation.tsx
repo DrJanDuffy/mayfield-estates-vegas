@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { CalendlyPopupLink } from '@/components/CalendlyPopupLink';
 
 export function Navigation() {
   const pathname = usePathname();
@@ -60,16 +61,11 @@ export function Navigation() {
           </div>
           
           <div className="hidden md:flex items-center">
-            <Link
-              href="/contact"
-              className={`inline-flex items-center px-4 py-2 border ${
-                isActive('/contact')
-                  ? 'border-blue-600 text-blue-600'
-                  : 'border-transparent text-white bg-blue-600 hover:bg-blue-700'
-              } text-sm font-medium rounded-md transition-colors`}
+            <CalendlyPopupLink
+              className="inline-flex items-center px-4 py-2 border border-transparent text-white bg-blue-600 hover:bg-blue-700 text-sm font-medium rounded-md transition-colors"
             >
-              Book a Call
-            </Link>
+              Book your free 15‑min call
+            </CalendlyPopupLink>
           </div>
 
           {/* Mobile menu button */}
@@ -128,13 +124,13 @@ export function Navigation() {
               >
                 Neighborhoods
               </Link>
-              <Link
-                href="/contact"
-                className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 text-center"
-                onClick={() => setMobileMenuOpen(false)}
+              <CalendlyPopupLink
+                className="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 text-center"
+                as="button"
+                onOpen={() => setMobileMenuOpen(false)}
               >
-                Book a Call
-              </Link>
+                Book your free 15‑min call
+              </CalendlyPopupLink>
             </div>
           </div>
         )}

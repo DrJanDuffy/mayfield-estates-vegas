@@ -26,8 +26,8 @@ export default function Home() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/Back Exterior001-024-009-4200x2800.jpg"
-              alt="Modern two-story home with desert landscaping and mountain views in Las Vegas"
+              src="/hero-1.jpg"
+              alt="Luxury home in Mayfield Estates Las Vegas—exclusive gated community with desert landscaping and mountain views"
               fill
               priority
               style={{ objectFit: 'cover' }}
@@ -263,6 +263,9 @@ export default function Home() {
               data-beds-min="3"
               data-baths-min="2"
             />
+            <p className="mt-4 text-center text-sm text-gray-500 max-w-2xl mx-auto" role="contentinfo">
+              Listing data is deemed reliable but not guaranteed. All listings are courtesy of the participant&apos;s MLS. © {new Date().getFullYear()} Mayfield Estates Las Vegas / Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.
+            </p>
           </div>
         </section>
 

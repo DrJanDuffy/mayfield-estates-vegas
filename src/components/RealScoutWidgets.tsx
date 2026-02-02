@@ -20,6 +20,9 @@ export default function RealScoutWidgets() {
           property-types="SFR,MF,TC,LAL,MOBILE,OTHER"
           price-min="400000"
         />
+        <p className="mt-4 text-sm text-gray-500" role="contentinfo">
+          Listing data deemed reliable but not guaranteed. All listings courtesy of the participant&apos;s MLS. © Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.
+        </p>
       </div>
     </>
   );

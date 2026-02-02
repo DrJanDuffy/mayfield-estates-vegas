@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
 import Analytics from '@/components/Analytics';
+import { CalendlyGlobal } from '@/components/CalendlyGlobal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -103,6 +104,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <Script
           src="https://widgets.realscout.com/latest/realscout-widgets.js"
           strategy="beforeInteractive"
@@ -128,6 +130,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-gray-50`}>
         <Analytics />
         {children}
+        <CalendlyGlobal />
       </body>
     </html>
   );
