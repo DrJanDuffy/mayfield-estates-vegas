@@ -117,7 +117,7 @@ export default function NorthLasVegasPage() {
                 </div>
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
-                    src="/market-featured.jpg"
+                    src="/images/hero/market-featured.jpg"
                     alt="New construction homes with modern features and spacious lots"
                     fill
                     className="object-cover"

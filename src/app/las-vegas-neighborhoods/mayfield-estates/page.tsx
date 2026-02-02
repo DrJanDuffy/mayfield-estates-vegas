@@ -151,7 +151,7 @@ export default function MayfieldEstatesPage() {
                 </div>
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
-                    src="/Back Exterior001-024-009-4200x2800.jpg"
+                    src="/images/exterior/back-exterior001-024-009-4200x2800.jpg"
                     alt="Stucco home with contemporary design and palm trees"
                     fill
                     className="object-cover"
@@ -221,7 +221,7 @@ export default function MayfieldEstatesPage() {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="relative h-64 rounded-xl overflow-hidden shadow-lg">
                   <Image
-                    src="/Back Exterior002-025-028-4200x2800.jpg"
+                    src="/images/exterior/back-exterior002-025-028-4200x2800.jpg"
                     alt="Architectural details of home exterior with landscaping"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-300"
@@ -229,7 +229,7 @@ export default function MayfieldEstatesPage() {
                 </div>
                 <div className="relative h-64 rounded-xl overflow-hidden shadow-lg">
                   <Image
-                    src="/Amenities002-028-026-4200x2801.jpg"
+                    src="/images/amenities/amenities002-028-026-4200x2801.jpg"
                     alt="Community pool and recreation area"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-300"
@@ -237,7 +237,7 @@ export default function MayfieldEstatesPage() {
                 </div>
                 <div className="relative h-64 rounded-xl overflow-hidden shadow-lg">
                   <Image
-                    src="/Bedroom One001-018-027-4200x2800.jpg"
+                    src="/images/interior/bedroom-one001-018-027-4200x2800.jpg"
                     alt="Large master bedroom with king bed and windows"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-300"

@@ -20,7 +20,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
             <Image 
-              src="/logo.png" 
+              src="/images/logos/logo.png" 
               alt="Mayfield Estates Las Vegas" 
               width={180} 
               height={50}
@@ -33,6 +33,12 @@ export function Navigation() {
               className={`flex items-center px-3 py-2 ${isActive('/')} hover:text-blue-600`}
             >
               Home
+            </Link>
+            <Link 
+              href="/about" 
+              className={`flex items-center px-3 py-2 ${isActive('/about')} hover:text-blue-600`}
+            >
+              About
             </Link>
             <Link 
               href="/home-value" 
@@ -95,6 +101,13 @@ export function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                href="/about"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/about') ? 'bg-blue-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50'}`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About
               </Link>
               <Link
                 href="/home-value"

@@ -117,7 +117,7 @@ export default function SummerlinPage() {
                 </div>
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
-                    src="/property-1.jpg"
+                    src="/images/properties/property-1.jpg"
                     alt="Spanish-style homes with red tile roofs in master-planned community"
                     fill
                     className="object-cover"

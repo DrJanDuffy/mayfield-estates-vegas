@@ -117,7 +117,7 @@ export default function HendersonPage() {
                 </div>
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
-                    src="/Amenities001-027-019-4200x2800.jpg"
+                    src="/images/amenities/amenities001-027-019-4200x2800.jpg"
                     alt="Well-maintained homes in safe residential neighborhood"
                     fill
                     className="object-cover"

@@ -47,6 +47,21 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/buyers" className="text-gray-300 hover:text-white transition-colors">
+                  Buyers
+                </Link>
+              </li>
+              <li>
+                <Link href="/sellers" className="text-gray-300 hover:text-white transition-colors">
+                  Sellers
+                </Link>
+              </li>
+              <li>
                 <Link href="/home-value" className="text-gray-300 hover:text-white transition-colors">
                   Home Value
                 </Link>
@@ -62,8 +77,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/faq" className="text-gray-300 hover:text-white transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
-                  Contact Us
+                  Contact
                 </Link>
               </li>
             </ul>

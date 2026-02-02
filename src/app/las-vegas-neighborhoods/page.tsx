@@ -21,7 +21,7 @@ const neighborhoods = [
     name: 'Summerlin',
     subtitle: 'Master-Planned Luxury Living',
     description: 'Summerlin is Las Vegas premier master-planned community, offering world-class amenities, top-rated schools, and stunning mountain views.',
-    image: '/property-1.jpg',
+    image: '/images/properties/property-1.jpg',
     stats: [
       { label: 'Average Home Price', value: '$700,000+' },
       { label: 'Community Size', value: '22,500 acres' },
@@ -41,7 +41,7 @@ const neighborhoods = [
     name: 'Green Valley',
     subtitle: 'Established Family Community',
     description: 'Green Valley offers a perfect blend of established neighborhoods, excellent schools, and convenient access to shopping and dining.',
-    image: '/property-2.jpg',
+    image: '/images/properties/property-2.jpg',
     stats: [
       { label: 'Average Home Price', value: '$450,000+' },
       { label: 'Community Size', value: '25 square miles' },
@@ -61,7 +61,7 @@ const neighborhoods = [
     name: 'Southwest Las Vegas',
     subtitle: 'Growing Luxury Area',
     description: 'Southwest Las Vegas features modern luxury homes, master-planned communities, and proximity to world-class amenities.',
-    image: '/property-3.jpg',
+    image: '/images/properties/property-3.jpg',
     stats: [
       { label: 'Average Home Price', value: '$500,000+' },
       { label: 'Population Growth', value: 'Fastest' },
@@ -81,7 +81,7 @@ const neighborhoods = [
     name: 'Henderson',
     subtitle: 'Safe, Growing City',
     description: 'Henderson is Nevada second-largest city, known for safety, award-winning parks, and family-friendly atmosphere.',
-    image: '/Amenities001-027-019-4200x2800.jpg',
+    image: '/images/amenities/amenities001-027-019-4200x2800.jpg',
     stats: [
       { label: 'Average Home Price', value: '$475,000+' },
       { label: 'Population', value: '320,000+' },
@@ -101,7 +101,7 @@ const neighborhoods = [
     name: 'North Las Vegas',
     subtitle: 'Affordable Growth Area',
     description: 'North Las Vegas offers affordable housing options, new developments, and excellent value for homebuyers.',
-    image: '/market-featured.jpg',
+    image: '/images/hero/market-featured.jpg',
     stats: [
       { label: 'Average Home Price', value: '$380,000+' },
       { label: 'Population', value: '260,000+' },
@@ -121,7 +121,7 @@ const neighborhoods = [
     name: 'Mayfield Estates',
     subtitle: 'Exclusive Gated Community',
     description: 'Mayfield Estates is Las Vegas premier gated community, offering luxury estates, world-class amenities, and unparalleled privacy.',
-    image: '/Back Exterior001-024-009-4200x2800.jpg',
+    image: '/images/exterior/back-exterior001-024-009-4200x2800.jpg',
     stats: [
       { label: 'Average Home Price', value: '$1.5M+' },
       { label: 'Community Type', value: 'Gated' },

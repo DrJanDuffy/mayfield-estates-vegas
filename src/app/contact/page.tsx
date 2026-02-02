@@ -11,7 +11,7 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Dr. Jan Duffy",
-    "image": "https://www.mayfieldestateslasvegas.com/DrJanDuffywithGooldCircle.jpg",
+    "image": "https://www.mayfieldestateslasvegas.com/images/team/drjanduffywithgooldcircle.jpg",
     "description": "Mayfield Estates Las Vegas specialist. Veteran-owned and women-owned real estate business providing expert guidance for luxury homes and estates in this premier gated community.",
     "url": "https://www.mayfieldestateslasvegas.com",
     "telephone": "+1-702-500-1953",
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   <div className="flex-shrink-0">
                     <div className="h-16 w-16 relative overflow-hidden rounded-full">
                       <Image
-                        src="/DrJanDuffywithGooldCircle.jpg"
+                        src="/images/team/drjanduffywithgooldcircle.jpg"
                         alt="Professional real estate agent photo"
                         fill
                         className="object-cover"

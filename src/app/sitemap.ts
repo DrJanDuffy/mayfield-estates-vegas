@@ -6,7 +6,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Core pages
   const routes = [
     '',
+    '/about',
     '/contact',
+    '/faq',
+    '/buyers',
+    '/sellers',
     '/home-value',
     '/value',
     '/cma',

@@ -24,19 +24,18 @@ export default function Home() {
         {/* Hero Section */}
         <header className="relative flex items-center justify-center text-white text-center overflow-hidden" style={{ height: "90vh", marginTop: "64px" }}>
           {/* Background Image */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 min-h-full w-full">
             <Image
-              src="/hero-2.jpg"
+              src="/images/hero/market-featured.jpg"
               alt="Luxury home in Mayfield Estates Las Vegas—exclusive gated community with desert landscaping and mountain views"
               fill
               priority
-              style={{ objectFit: 'cover' }}
+              sizes="100vw"
+              style={{ objectFit: 'cover', objectPosition: 'center center' }}
               className="opacity-95"
             />
-            {/* Sophisticated gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/60"></div>
-            {/* Subtle texture overlay */}
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoNDAwdjQwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-20"></div>
+            {/* Gradient overlay - lighter so hero shot shows through */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" aria-hidden="true" />
           </div>
           
           {/* Content */}
@@ -136,7 +135,7 @@ export default function Home() {
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/market-featured.jpg"
+                  src="/images/hero/market-featured.jpg"
                   alt="Luxury home interior with modern furnishings and open floor plan"
                   fill
                   className="object-cover"
@@ -185,6 +184,15 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            <p className="text-center text-gray-600 mt-8">
+              <Link href="/about" className="text-blue-600 hover:underline">About</Link>
+              {' · '}
+              <Link href="/buyers" className="text-blue-600 hover:underline">Buyers</Link>
+              {' · '}
+              <Link href="/sellers" className="text-blue-600 hover:underline">Sellers</Link>
+              {' · '}
+              <Link href="/faq" className="text-blue-600 hover:underline">FAQ</Link>
+            </p>
           </div>
         </section>
 

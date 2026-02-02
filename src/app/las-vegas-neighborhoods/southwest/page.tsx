@@ -118,7 +118,7 @@ export default function SouthwestPage() {
                 </div>
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
-                    src="/property-3.jpg"
+                    src="/images/properties/property-3.jpg"
                     alt="Contemporary homes with clean lines and desert landscaping"
                     fill
                     className="object-cover"

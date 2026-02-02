@@ -118,7 +118,7 @@ export default function GreenValleyPage() {
                 </div>
                 <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
                   <Image
-                    src="/property-2.jpg"
+                    src="/images/properties/property-2.jpg"
                     alt="Traditional single-story homes with mature trees and sidewalks"
                     fill
                     className="object-cover"
