@@ -26,7 +26,7 @@ export default function Home() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/hero-1.jpg"
+              src="/hero-2.jpg"
               alt="Luxury home in Mayfield Estates Las Vegas—exclusive gated community with desert landscaping and mountain views"
               fill
               priority
