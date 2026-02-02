@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -35,11 +36,18 @@ export default function ValuePage() {
       
       <main className="pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <nav className="mb-6 text-sm text-gray-600" aria-label="Breadcrumb">
+          <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <li><Link href="/" className="hover:text-blue-600">Home</Link></li>
+            <li aria-hidden="true">/</li>
+            <li className="text-gray-900 font-medium" aria-current="page">What&apos;s Your Home Worth?</li>
+          </ol>
+        </nav>
         <h1 className="text-4xl font-bold mb-6">
           What&apos;s Your Home Worth?
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          Get an instant estimate of your home&apos;s value based on recent sales in your neighborhood.
+          Get an instant estimate of your home&apos;s value based on recent sales in your neighborhood. No obligation.
         </p>
 
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
@@ -77,6 +85,15 @@ export default function ValuePage() {
             </ul>
           </div>
         </div>
+
+        <section className="mt-12 text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Want a custom report or to discuss selling?</h2>
+          <p className="text-gray-600 mb-4">Dr. Jan Duffy offers free, no-obligation consultations for Mayfield Estates and Las Vegas sellers.</p>
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            Book a Free Call
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+          </Link>
+        </section>
       </div>
       </main>
       <Footer />
