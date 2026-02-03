@@ -59,6 +59,19 @@ export default function SouthwestPage() {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is Southwest Las Vegas known for?", "acceptedAnswer": { "@type": "Answer", "text": "Southwest Las Vegas is a rapidly growing area with master-planned communities like Mountain's Edge, Providence, and Rhodes Ranch, modern homes, and proximity to the Strip and airport." } },
+      { "@type": "Question", "name": "How much do homes cost in Southwest Las Vegas?", "acceptedAnswer": { "@type": "Answer", "text": "Prices vary by community; Mountain's Edge averages around $555K, Southern Highlands around $1.56M. For a custom CMA, request one on our CMA page or contact Dr. Jan Duffy." } },
+      { "@type": "Question", "name": "What communities are in Southwest Las Vegas?", "acceptedAnswer": { "@type": "Answer", "text": "Mountain's Edge, Providence, Rhodes Ranch, Southern Highlands, Spanish Trail, and Centennial Hills are among the featured master-planned communities." } },
+      { "@type": "Question", "name": "How do I get a home value in Southwest Las Vegas?", "acceptedAnswer": { "@type": "Answer", "text": "Use our Home Value or What's Your Home Worth? tools for an estimate. For a custom CMA, request a CMA or contact Dr. Jan Duffy." } },
+      { "@type": "Question", "name": "Who can help me buy or sell in Southwest Las Vegas?", "acceptedAnswer": { "@type": "Answer", "text": "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Las Vegas area real estate including Southwest Las Vegas." } },
+      { "@type": "Question", "name": "How do I contact Dr. Jan Duffy?", "acceptedAnswer": { "@type": "Answer", "text": "Call (702) 500-1953, use the Book a Free Call button on any page, or visit our Contact page. Dr. Jan Duffy responds within 24 hours." } },
+    ],
+  };
+
   return (
     <>
       <Script
@@ -71,12 +84,20 @@ export default function SouthwestPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <Script
+        id="faq-schema-southwest"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="min-h-screen bg-gray-50">
         <div className="fixed w-full z-10">
           <Navigation />
         </div>
 
-        <main className="pt-16">
+        <main id="main-content" className="pt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Las Vegas Neighborhoods', href: '/las-vegas-neighborhoods' }, { label: 'Southwest Las Vegas' }]} />
+          </div>
           {/* Hero Section */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -180,6 +201,38 @@ export default function SouthwestPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <div className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions About Southwest Las Vegas</h2>
+              <dl className="space-y-4 max-w-3xl mx-auto">
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">What is Southwest Las Vegas known for?</dt>
+                  <dd className="text-gray-700">Southwest Las Vegas is a rapidly growing area with master-planned communities like Mountain&apos;s Edge, Providence, and Rhodes Ranch, modern homes, and proximity to the Strip and airport. See our <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:underline">Las Vegas Neighborhoods</Link> page.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How much do homes cost in Southwest Las Vegas?</dt>
+                  <dd className="text-gray-700">Prices vary by community; Mountain&apos;s Edge averages around $555K, Southern Highlands around $1.56M. For a custom <Link href="/cma" className="text-blue-600 hover:underline">CMA</Link> or <Link href="/home-value" className="text-blue-600 hover:underline">home value estimate</Link>, contact Dr. Jan Duffy.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">What communities are in Southwest Las Vegas?</dt>
+                  <dd className="text-gray-700">Mountain&apos;s Edge, Providence, Rhodes Ranch, Southern Highlands, Spanish Trail, and Centennial Hills are among the featured master-planned communities.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I get a home value in Southwest Las Vegas?</dt>
+                  <dd className="text-gray-700">Use our <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> or <Link href="/value" className="text-blue-600 hover:underline">What&apos;s Your Home Worth?</Link> tools for an estimate. For a custom CMA, <Link href="/cma" className="text-blue-600 hover:underline">request a CMA</Link> or <Link href="/contact" className="text-blue-600 hover:underline">contact Dr. Jan Duffy</Link>.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Who can help me buy or sell in Southwest Las Vegas?</dt>
+                  <dd className="text-gray-700">Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Las Vegas area real estate including Southwest Las Vegas. Visit our <Link href="/about" className="text-blue-600 hover:underline">About</Link> and <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> pages.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I contact Dr. Jan Duffy?</dt>
+                  <dd className="text-gray-700">Call (702) 500-1953, use the Book a Free Call button on any page, or visit our <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> page. Dr. Jan Duffy responds within 24 hours.</dd>
+                </div>
+              </dl>
             </div>
           </div>
 

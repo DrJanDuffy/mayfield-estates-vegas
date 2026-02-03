@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Script from 'next/script';
 import { Navigation } from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Summerlin Las Vegas | Luxury Master-Planned Community | Real Estate Guide',
@@ -71,12 +72,20 @@ export default function SummerlinPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <Script
+        id="faq-schema-summerlin"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="min-h-screen bg-gray-50">
         <div className="fixed w-full z-10">
           <Navigation />
         </div>
 
-        <main className="pt-16">
+        <main id="main-content" className="pt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Las Vegas Neighborhoods', href: '/las-vegas-neighborhoods' }, { label: 'Summerlin' }]} />
+          </div>
           {/* Hero Section */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -179,6 +188,39 @@ export default function SummerlinPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions About Summerlin</h2>
+              <dl className="space-y-4 max-w-3xl mx-auto">
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">What is Summerlin known for?</dt>
+                  <dd className="text-gray-700">Summerlin is Las Vegas premier master-planned community, known for Red Rock Canyon access, 150+ parks and trails, top schools, golf courses, and luxury homes. Explore our <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:underline">Las Vegas Neighborhoods</Link> page for more areas.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How much do homes cost in Summerlin?</dt>
+                  <dd className="text-gray-700">Average home prices in Summerlin are around $1.33M with a median near $842K. Inventory and pricing vary by village. For a custom <Link href="/cma" className="text-blue-600 hover:underline">CMA</Link> or <Link href="/home-value" className="text-blue-600 hover:underline">home value estimate</Link>, contact Dr. Jan Duffy.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Are there good schools in Summerlin?</dt>
+                  <dd className="text-gray-700">Yes. Summerlin is served by top-rated Clark County School District schools and is a popular choice for families. See our <Link href="/buyers" className="text-blue-600 hover:underline">Buyers</Link> page for more on finding a family home.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I get a home value in Summerlin?</dt>
+                  <dd className="text-gray-700">Use our <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> or <Link href="/value" className="text-blue-600 hover:underline">What&apos;s Your Home Worth?</Link> tools for an estimate. For a custom CMA in Summerlin, <Link href="/cma" className="text-blue-600 hover:underline">request a CMA</Link> or <Link href="/contact" className="text-blue-600 hover:underline">contact Dr. Jan Duffy</Link>.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Who can help me buy or sell in Summerlin?</dt>
+                  <dd className="text-gray-700">Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Las Vegas luxury real estate including Summerlin. Visit our <Link href="/about" className="text-blue-600 hover:underline">About</Link> and <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> pages, or call (702) 500-1953.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I contact Dr. Jan Duffy?</dt>
+                  <dd className="text-gray-700">Call (702) 500-1953, use the Book a Free Call button on any page, or visit our <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> page. Dr. Jan Duffy responds within 24 hours.</dd>
+                </div>
+              </dl>
             </div>
           </div>
 

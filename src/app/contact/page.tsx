@@ -2,9 +2,11 @@
 
 import Script from 'next/script';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { CalendlySection } from '@/components/CalendlySection';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export default function ContactPage() {
   const contactPageSchema = {
@@ -20,6 +22,21 @@ export default function ContactPage() {
       "email": "DrDuffySells@MayfieldEstatesLasVegas.com",
       "areaServed": { "@type": "Place", "name": "Mayfield Estates, Las Vegas, NV" }
     }
+  };
+
+  const contactFaqItems = [
+    { q: 'How do I contact Dr. Jan Duffy?', a: 'You can call (702) 500-1953, email DrDuffySells@MayfieldEstatesLasVegas.com, or use the "Book your free 15‑min call" button on any page to schedule a call. Our Contact page also has an embedded scheduler for your convenience.' },
+    { q: 'What should I expect when I call or schedule a call?', a: 'Dr. Jan Duffy or her team will discuss your goals—whether you\'re buying, selling, or exploring your home value in Las Vegas or Mayfield Estates. You can also get a quick home value on our Home Value page or request a CMA on our Request CMA page before reaching out.' },
+    { q: 'Is there a fee for a consultation?', a: 'No. The initial 15-minute call and consultations are free. There are no upfront fees for home value reports or CMAs. See our FAQ page for more on fees and services.' },
+    { q: 'What areas does Dr. Jan Duffy serve?', a: 'Dr. Jan Duffy serves Las Vegas, Mayfield Estates, Summerlin, Green Valley, Henderson, North Las Vegas, and the Southwest valley. Explore our Las Vegas Neighborhoods page for area details, or our About page for more on her practice.' },
+    { q: 'I\'m interested in buying. Where do I start?', a: 'Start by exploring our Buyers page and Property Listings page, then book a free 15-minute call or contact us. Dr. Jan Duffy will guide you through financing, search, and showings.' },
+    { q: 'I want to sell my home. How do I get started?', a: 'Get a free home value on our Home Value page or request a CMA on our Request CMA page. Then book a free call or contact us to discuss listing strategy. See our Sellers page for more on the selling process.' },
+  ];
+
+  const contactFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: contactFaqItems.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
   };
 
   const businessSchema = {
@@ -121,6 +138,11 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
       />
+      <Script 
+        id="contact-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactFaqSchema) }}
+      />
       <div className="min-h-screen bg-gray-50">
         {/* Navigation */}
         <div className="fixed w-full z-10">
@@ -146,16 +168,38 @@ export default function ContactPage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">How to Reach Dr. Jan Duffy</h2>
+            <p className="text-gray-700 mb-4">
+              Contact Dr. Jan Duffy for Mayfield Estates and Las Vegas luxury real estate. Whether you want to schedule a free consultation, get a <Link href="/home-value" className="text-blue-600 hover:underline">home value report</Link>, request a <Link href="/cma" className="text-blue-600 hover:underline">CMA</Link>, or explore <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:underline">Las Vegas neighborhoods</Link>, you can call, email, or book online. For more on her services, see our <Link href="/about" className="text-blue-600 hover:underline">About</Link>, <Link href="/buyers" className="text-blue-600 hover:underline">Buyers</Link>, and <Link href="/sellers" className="text-blue-600 hover:underline">Sellers</Link> pages, or read our <Link href="/faq" className="text-blue-600 hover:underline">FAQ</Link>.
+            </p>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Phone &amp; Email</h3>
+            <p className="text-gray-700 mb-4">
+              Call (702) 500-1953 or email DrDuffySells@MayfieldEstatesLasVegas.com. Dr. Jan Duffy responds within 24 hours. For quick tools, use our <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> or <Link href="/value" className="text-blue-600 hover:underline">Property Listings</Link> pages.
+            </p>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Schedule a Free Call</h3>
+            <p className="text-gray-700 mb-4">
+              Use the scheduler below or the "Book your free 15‑min call" button on any page. The call is free and there is no obligation. You can discuss buying, selling, or your home value in Las Vegas or Mayfield Estates.
+            </p>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Quick Links Before You Call</h3>
+            <p className="text-gray-700">
+              Get a <Link href="/home-value" className="text-blue-600 hover:underline">home value estimate</Link> or <Link href="/cma" className="text-blue-600 hover:underline">request a CMA</Link>, browse <Link href="/value" className="text-blue-600 hover:underline">property listings</Link>, explore <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:underline">Las Vegas neighborhoods</Link>, or read our <Link href="/blog" className="text-blue-600 hover:underline">Blog</Link>. Buyers and sellers can also review our <Link href="/buyers" className="text-blue-600 hover:underline">Buyers</Link> and <Link href="/sellers" className="text-blue-600 hover:underline">Sellers</Link> pages, or check our <Link href="/faq" className="text-blue-600 hover:underline">FAQ</Link> and <Link href="/about" className="text-blue-600 hover:underline">About</Link> for more on Dr. Jan Duffy.
+            </p>
+          </section>
+
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div>
               <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Information</h2>
                 <div className="flex items-center mb-6">
                   <div className="flex-shrink-0">
                     <div className="h-16 w-16 relative overflow-hidden rounded-full">
                       <Image
                         src="/images/team/drjanduffywithgooldcircle.jpg"
-                        alt="Professional real estate agent photo"
+                        alt="Dr. Jan Duffy, Mayfield Estates Las Vegas REALTOR"
                         fill
                         className="object-cover"
                         sizes="(max-width: 64px) 100vw, 64px"
@@ -164,7 +208,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h2 className="text-2xl font-bold text-gray-900">Dr. Jan Duffy</h2>
+                    <h3 className="text-xl font-bold text-gray-900">Dr. Jan Duffy</h3>
                     <p className="text-gray-600">REALTOR®</p>
                   </div>
                 </div>
@@ -243,9 +287,22 @@ export default function ContactPage() {
 
             {/* Calendly: Schedule time with our team */}
             <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Schedule a Free Consultation</h2>
               <CalendlySection height={700} compact />
             </div>
           </div>
+
+          <section className="mt-12 pt-8 border-t border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Frequently Asked Questions About Contacting Us</h2>
+            <dl className="space-y-4">
+              {contactFaqItems.map(({ q, a }, i) => (
+                <div key={i} className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">{q}</dt>
+                  <dd className="text-gray-700">{a}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
         </div>
       </main>
       <Footer />

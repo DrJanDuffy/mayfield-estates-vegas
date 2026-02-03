@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Script from 'next/script';
 import { Navigation } from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Henderson Nevada | Safe Family Community | Real Estate Guide',
@@ -57,6 +58,19 @@ export default function HendersonPage() {
         "item": "https://www.mayfieldestateslasvegas.com/las-vegas-neighborhoods/henderson"
       }
     ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is Henderson known for?", "acceptedAnswer": { "@type": "Answer", "text": "Henderson is Nevada's second-largest city, known for safety, award-winning parks, Lake Las Vegas, and family-friendly living." } },
+      { "@type": "Question", "name": "How much do homes cost in Henderson?", "acceptedAnswer": { "@type": "Answer", "text": "Average home prices in Henderson are around $475K+. For a custom CMA, request one on our CMA page or contact Dr. Jan Duffy." } },
+      { "@type": "Question", "name": "Is Henderson safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Henderson is consistently ranked as one of the safest cities in Nevada and has received accolades for family-friendly living." } },
+      { "@type": "Question", "name": "How do I get a home value in Henderson?", "acceptedAnswer": { "@type": "Answer", "text": "Use our Home Value or What's Your Home Worth? tools for an estimate. For a custom CMA, request a CMA or contact Dr. Jan Duffy." } },
+      { "@type": "Question", "name": "Who can help me buy or sell in Henderson?", "acceptedAnswer": { "@type": "Answer", "text": "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Las Vegas area real estate including Henderson." } },
+      { "@type": "Question", "name": "How do I contact Dr. Jan Duffy?", "acceptedAnswer": { "@type": "Answer", "text": "Call (702) 500-1953, use the Book a Free Call button on any page, or visit our Contact page. Dr. Jan Duffy responds within 24 hours." } },
+    ],
   };
 
   return (
@@ -175,6 +189,38 @@ export default function HendersonPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <div className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions About Henderson</h2>
+              <dl className="space-y-4 max-w-3xl mx-auto">
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">What is Henderson known for?</dt>
+                  <dd className="text-gray-700">Henderson is Nevada&apos;s second-largest city, known for safety, award-winning parks, Lake Las Vegas, and family-friendly living. See our <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:underline">Las Vegas Neighborhoods</Link> page.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How much do homes cost in Henderson?</dt>
+                  <dd className="text-gray-700">Average home prices in Henderson are around $475K+. For a custom <Link href="/cma" className="text-blue-600 hover:underline">CMA</Link> or <Link href="/home-value" className="text-blue-600 hover:underline">home value estimate</Link>, contact Dr. Jan Duffy.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Is Henderson safe?</dt>
+                  <dd className="text-gray-700">Yes. Henderson is consistently ranked as one of the safest cities in Nevada and has received accolades for family-friendly living.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I get a home value in Henderson?</dt>
+                  <dd className="text-gray-700">Use our <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> or <Link href="/value" className="text-blue-600 hover:underline">What&apos;s Your Home Worth?</Link> tools for an estimate. For a custom CMA, <Link href="/cma" className="text-blue-600 hover:underline">request a CMA</Link> or <Link href="/contact" className="text-blue-600 hover:underline">contact Dr. Jan Duffy</Link>.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Who can help me buy or sell in Henderson?</dt>
+                  <dd className="text-gray-700">Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Las Vegas area real estate including Henderson. Visit our <Link href="/about" className="text-blue-600 hover:underline">About</Link> and <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> pages.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I contact Dr. Jan Duffy?</dt>
+                  <dd className="text-gray-700">Call (702) 500-1953, use the Book a Free Call button on any page, or visit our <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> page. Dr. Jan Duffy responds within 24 hours.</dd>
+                </div>
+              </dl>
             </div>
           </div>
 

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Script from 'next/script';
 import { Navigation } from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Mayfield Estates Las Vegas | Exclusive Gated Community | Luxury Homes',
@@ -108,7 +109,10 @@ export default function MayfieldEstatesPage() {
           <Navigation />
         </div>
 
-        <main className="pt-16">
+        <main id="main-content" className="pt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Las Vegas Neighborhoods', href: '/las-vegas-neighborhoods' }, { label: 'Mayfield Estates' }]} />
+          </div>
           {/* Hero Section */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -4,10 +4,12 @@ import Image from 'next/image';
 import Script from 'next/script';
 import { Navigation } from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Las Vegas Neighborhoods | Expert Real Estate Guide | Mayfield Estates',
   description: 'Discover the best neighborhoods in Las Vegas, NV. Expert real estate guide to Summerlin, Green Valley, Southwest Las Vegas, Henderson, and more. Find your perfect luxury home with Dr. Jan Duffy.',
+  alternates: { canonical: '/las-vegas-neighborhoods' },
   openGraph: {
     title: 'Las Vegas Neighborhoods | Expert Real Estate Guide',
     description: 'Discover the best neighborhoods in Las Vegas, from luxury communities to family-friendly areas.',
@@ -140,6 +142,19 @@ const neighborhoods = [
 ];
 
 export default function LasVegasNeighborhoodsPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Which Las Vegas neighborhood is best for families?', acceptedAnswer: { '@type': 'Answer', text: 'Green Valley and Henderson are popular for families due to schools, parks, and safety. Summerlin also offers top schools and master-planned amenities.' } },
+      { '@type': 'Question', name: 'Where are the luxury and gated communities?', acceptedAnswer: { '@type': 'Answer', text: 'Mayfield Estates is an exclusive gated community with luxury estates. Summerlin offers master-planned luxury living.' } },
+      { '@type': 'Question', name: 'How do I get a home value in a specific neighborhood?', acceptedAnswer: { '@type': 'Answer', text: 'Use our Home Value or What\'s Your Home Worth? tools for an estimate. For a custom CMA tailored to your address and neighborhood, request a CMA or contact Dr. Jan Duffy.' } },
+      { '@type': 'Question', name: 'Who can help me buy or sell in these neighborhoods?', acceptedAnswer: { '@type': 'Answer', text: 'Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Mayfield Estates and Las Vegas luxury real estate.' } },
+      { '@type': 'Question', name: 'Are there affordable areas in Las Vegas?', acceptedAnswer: { '@type': 'Answer', text: 'North Las Vegas and parts of Southwest Las Vegas offer more affordable options with strong growth.' } },
+      { '@type': 'Question', name: 'How do I contact Dr. Jan Duffy?', acceptedAnswer: { '@type': 'Answer', text: 'Call (702) 500-1953, use the Book a Free Call button on any page, or visit our Contact page. Dr. Jan Duffy responds within 24 hours.' } },
+    ],
+  };
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -181,13 +196,21 @@ export default function LasVegasNeighborhoodsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
+      <Script
+        id="neighborhoods-faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="min-h-screen bg-gray-50">
         {/* Navigation */}
         <div className="fixed w-full z-10">
           <Navigation />
         </div>
 
-        <main className="pt-16">
+        <main id="main-content" className="pt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Las Vegas Neighborhoods' }]} />
+          </div>
           {/* Hero Section */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -210,15 +233,31 @@ export default function LasVegasNeighborhoodsPage() {
                   Find Your Perfect Las Vegas Neighborhood
                 </h2>
                 <p className="text-lg text-gray-700 mb-6">
-                  Las Vegas offers diverse neighborhoods to match every lifestyle and budget. From master-planned communities in Summerlin to established family areas in Green Valley, 
+                  Las Vegas offers diverse neighborhoods to match every lifestyle and budget. From master-planned communities in <Link href="/las-vegas-neighborhoods/summerlin" className="text-blue-600 hover:underline">Summerlin</Link> to established family areas in <Link href="/las-vegas-neighborhoods/green-valley" className="text-blue-600 hover:underline">Green Valley</Link>,
                   each neighborhood has its unique character, amenities, and advantages.
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
-                  As your trusted Las Vegas real estate expert, I specialize in helping clients find the perfect neighborhood that meets their needs. Whether you&apos;re looking 
-                  for luxury estates, family-friendly communities, or investment opportunities, I provide comprehensive insights and personalized guidance.
+                  As your trusted Las Vegas real estate expert, I specialize in helping clients find the perfect neighborhood that meets their needs. Whether you&apos;re looking
+                  for luxury estates, family-friendly communities, or investment opportunities, I provide comprehensive insights and personalized guidance. For a home value estimate, use our <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> or <Link href="/value" className="text-blue-600 hover:underline">What&apos;s Your Home Worth?</Link> tools; for a custom <Link href="/cma" className="text-blue-600 hover:underline">CMA</Link>, request one or <Link href="/contact" className="text-blue-600 hover:underline">contact us</Link>.
                 </p>
-                <p className="text-lg text-gray-700">
+                <p className="text-lg text-gray-700 mb-6">
                   Explore our detailed guides below to learn more about each neighborhood&apos;s housing market, amenities, schools, and lifestyle offerings.
+                </p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-10">Choosing the Right Las Vegas Neighborhood</h2>
+                <p className="text-gray-700 mb-4">
+                  Deciding where to buy or sell in Las Vegas depends on your priorities: schools, commute, price range, and lifestyle. Below is a quick overview of what each area offers.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Luxury and Gated Living</h3>
+                <p className="text-gray-700 mb-4">
+                  <Link href="/las-vegas-neighborhoods/mayfield-estates" className="text-blue-600 hover:underline">Mayfield Estates</Link> is an exclusive gated community with luxury estates and strong HOA oversight. <Link href="/las-vegas-neighborhoods/summerlin" className="text-blue-600 hover:underline">Summerlin</Link> offers master-planned luxury with Red Rock access, golf, and top schools.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Family-Friendly and Affordable</h3>
+                <p className="text-gray-700 mb-4">
+                  <Link href="/las-vegas-neighborhoods/green-valley" className="text-blue-600 hover:underline">Green Valley</Link> and <Link href="/las-vegas-neighborhoods/henderson" className="text-blue-600 hover:underline">Henderson</Link> are known for schools, parks, and safety. <Link href="/las-vegas-neighborhoods/north-las-vegas" className="text-blue-600 hover:underline">North Las Vegas</Link> and <Link href="/las-vegas-neighborhoods/southwest" className="text-blue-600 hover:underline">Southwest Las Vegas</Link> offer strong value and growth. Read our <Link href="/buyers" className="text-blue-600 hover:underline">Buyers</Link> and <Link href="/sellers" className="text-blue-600 hover:underline">Sellers</Link> pages for strategy, or <Link href="/about" className="text-blue-600 hover:underline">About</Link> and <Link href="/faq" className="text-blue-600 hover:underline">FAQ</Link> for more on working with Dr. Jan Duffy.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Get Your Home Value or a CMA</h3>
+                <p className="text-gray-700">
+                  For a quick estimate in any of these areas, use our <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> page or <Link href="/value" className="text-blue-600 hover:underline">What&apos;s Your Home Worth?</Link> tool. For a detailed <Link href="/cma" className="text-blue-600 hover:underline">Comparative Market Analysis</Link>, request one or <Link href="/contact" className="text-blue-600 hover:underline">book a free call</Link> with Dr. Jan Duffy. For market trends and tips, see our <Link href="/blog" className="text-blue-600 hover:underline">Blog</Link>.
                 </p>
               </div>
             </div>
@@ -304,6 +343,38 @@ export default function LasVegasNeighborhoodsPage() {
                   </Link>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <div className="bg-white py-16 border-t border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Frequently Asked Questions About Las Vegas Neighborhoods</h2>
+              <dl className="space-y-4 max-w-3xl mx-auto">
+                <div className="bg-gray-50 rounded-lg border border-gray-200 p-5">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Which Las Vegas neighborhood is best for families?</dt>
+                  <dd className="text-gray-700">Green Valley and Henderson are popular for families due to schools, parks, and safety. Summerlin also offers top schools and master-planned amenities. Explore our <Link href="/las-vegas-neighborhoods/green-valley" className="text-blue-600 hover:underline">Green Valley</Link>, <Link href="/las-vegas-neighborhoods/henderson" className="text-blue-600 hover:underline">Henderson</Link>, and <Link href="/las-vegas-neighborhoods/summerlin" className="text-blue-600 hover:underline">Summerlin</Link> pages for details.</dd>
+                </div>
+                <div className="bg-gray-50 rounded-lg border border-gray-200 p-5">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Where are the luxury and gated communities?</dt>
+                  <dd className="text-gray-700">Mayfield Estates is an exclusive gated community with luxury estates. Summerlin offers master-planned luxury living. See our <Link href="/las-vegas-neighborhoods/mayfield-estates" className="text-blue-600 hover:underline">Mayfield Estates</Link> and <Link href="/las-vegas-neighborhoods/summerlin" className="text-blue-600 hover:underline">Summerlin</Link> guides.</dd>
+                </div>
+                <div className="bg-gray-50 rounded-lg border border-gray-200 p-5">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I get a home value in a specific neighborhood?</dt>
+                  <dd className="text-gray-700">Use our <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> or <Link href="/value" className="text-blue-600 hover:underline">What&apos;s Your Home Worth?</Link> tools for an estimate. For a custom CMA tailored to your address and neighborhood, <Link href="/cma" className="text-blue-600 hover:underline">request a CMA</Link> or <Link href="/contact" className="text-blue-600 hover:underline">contact Dr. Jan Duffy</Link>.</dd>
+                </div>
+                <div className="bg-gray-50 rounded-lg border border-gray-200 p-5">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Who can help me buy or sell in these neighborhoods?</dt>
+                  <dd className="text-gray-700">Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Mayfield Estates and Las Vegas luxury real estate. Visit our <Link href="/about" className="text-blue-600 hover:underline">About</Link> and <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> pages, or call (702) 500-1953.</dd>
+                </div>
+                <div className="bg-gray-50 rounded-lg border border-gray-200 p-5">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Are there affordable areas in Las Vegas?</dt>
+                  <dd className="text-gray-700">North Las Vegas and parts of Southwest Las Vegas offer more affordable options with strong growth. See our <Link href="/las-vegas-neighborhoods/north-las-vegas" className="text-blue-600 hover:underline">North Las Vegas</Link> and <Link href="/las-vegas-neighborhoods/southwest" className="text-blue-600 hover:underline">Southwest</Link> neighborhood pages for market stats and highlights.</dd>
+                </div>
+                <div className="bg-gray-50 rounded-lg border border-gray-200 p-5">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I contact Dr. Jan Duffy?</dt>
+                  <dd className="text-gray-700">Call (702) 500-1953, use the Book a Free Call button on any page, or visit our <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> page. Dr. Jan Duffy responds within 24 hours. For buyers and sellers, see our <Link href="/buyers" className="text-blue-600 hover:underline">Buyers</Link> and <Link href="/sellers" className="text-blue-600 hover:underline">Sellers</Link> pages.</dd>
+                </div>
+              </dl>
             </div>
           </div>
 

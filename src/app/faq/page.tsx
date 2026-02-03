@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { CalendlyPopupLink } from '@/components/CalendlyPopupLink';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 const faqItems = [
   {
@@ -25,12 +26,8 @@ const faqItems = [
     a: 'Dr. Jan Duffy serves Las Vegas, Henderson, Summerlin, Green Valley, North Las Vegas, the Southwest valley, Mayfield Estates, and surrounding communities. She works with buyers and sellers across the greater Las Vegas area.',
   },
   {
-    q: 'Is there a fee for a home value report or CMA?',
-    a: 'Our online home value tool is free. A detailed CMA is also provided at no obligation when you’re considering selling. There are no upfront fees for these services.',
-  },
-  {
-    q: 'How can I schedule a call with Dr. Jan Duffy?',
-    a: 'Use the "Book your free 15‑min call" button on any page to open the scheduling tool, or call (702) 500-1953. You can also reach out via our Contact page.',
+    q: 'Is there a fee for a home value report or CMA? How do I schedule a call?',
+    a: 'Our online home value tool is free. A detailed CMA is also provided at no obligation when you’re considering selling. There are no upfront fees. To schedule a call, use the "Book your free 15‑min call" button on any page, call (702) 500-1953, or visit our Contact page.',
   },
 ];
 
@@ -55,27 +52,50 @@ export default function FaqPage() {
       </div>
       <main id="main-content" className="pt-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <nav className="mb-6 text-sm text-gray-600" aria-label="Breadcrumb">
-            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              <li><Link href="/" className="hover:text-blue-600">Home</Link></li>
-              <li aria-hidden="true">/</li>
-              <li className="text-gray-900 font-medium" aria-current="page">FAQ</li>
-            </ol>
-          </nav>
+          <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
 
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Frequently Asked Questions</h1>
           <p className="text-gray-600 mb-8">
-            Common questions about Mayfield Estates Las Vegas, buying and selling, and working with Dr. Jan Duffy.
+            Common questions about Mayfield Estates Las Vegas, buying and selling, and working with Dr. Jan Duffy. For more detail, see our <Link href="/about" className="text-blue-600 hover:underline">About</Link>, <Link href="/buyers" className="text-blue-600 hover:underline">Buyers</Link>, <Link href="/sellers" className="text-blue-600 hover:underline">Sellers</Link>, <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link>, <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link>, and <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:underline">Las Vegas Neighborhoods</Link> pages.
           </p>
 
-          <dl className="space-y-6">
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">About Mayfield Estates &amp; Las Vegas</h2>
+            <p className="text-gray-700 mb-4">
+              Mayfield Estates is one of Las Vegas&apos;s premier gated communities. Dr. Jan Duffy specializes in this area and in luxury homes across Summerlin, Green Valley, Henderson, and more. Below are answers to common questions; for neighborhood comparisons, visit our <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:underline">Las Vegas Neighborhoods</Link> page.
+            </p>
+          </section>
+
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Buying &amp; Selling</h2>
+            <p className="text-gray-700 mb-4">
+              Whether you&apos;re buying or selling in Las Vegas, Mayfield Estates, Summerlin, Green Valley, or Henderson, the right tools and a clear process make a difference. Below is a quick guide; for full details, use the linked pages and book a free call with Dr. Jan Duffy.
+            </p>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Buying a Home</h3>
+            <p className="text-gray-700 mb-4">
+              If you&apos;re buying, start with our <Link href="/buyers" className="text-blue-600 hover:underline">Buyers</Link> page and <Link href="/value" className="text-blue-600 hover:underline">Property Listings</Link>. You can also explore <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:underline">neighborhoods</Link> and book a free call to discuss your criteria. For market insights, see our <Link href="/blog" className="text-blue-600 hover:underline">Blog</Link> and <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> tools.
+            </p>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Selling a Home</h3>
+            <p className="text-gray-700 mb-4">
+              If you&apos;re selling, get a <Link href="/home-value" className="text-blue-600 hover:underline">home value</Link> or <Link href="/cma" className="text-blue-600 hover:underline">request a CMA</Link>, then see our <Link href="/sellers" className="text-blue-600 hover:underline">Sellers</Link> page and book a free call to discuss listing strategy. Dr. Jan Duffy serves sellers across Las Vegas and surrounding areas.
+            </p>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Home Value &amp; CMA</h3>
+            <p className="text-gray-700 mb-4">
+              Our <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> page gives you an instant estimate; our <Link href="/cma" className="text-blue-600 hover:underline">Request CMA</Link> page connects you with a detailed Comparative Market Analysis. Both are free and no obligation. For more on Dr. Jan Duffy, see our <Link href="/about" className="text-blue-600 hover:underline">About</Link> page.
+            </p>
+          </section>
+
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <dl className="space-y-6">
             {faqItems.map(({ q, a }, i) => (
               <div key={i} className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
                 <dt className="text-lg font-semibold text-gray-900 mb-2">{q}</dt>
                 <dd className="text-gray-700">{a}</dd>
               </div>
             ))}
-          </dl>
+            </dl>
+          </section>
 
           <div className="mt-10 p-6 bg-blue-50 rounded-xl border border-blue-100">
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Still have questions?</h2>

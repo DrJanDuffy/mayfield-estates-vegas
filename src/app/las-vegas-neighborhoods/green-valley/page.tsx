@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Script from 'next/script';
 import { Navigation } from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Green Valley Las Vegas | Family Community Real Estate Guide',
@@ -71,12 +72,20 @@ export default function GreenValleyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <Script
+        id="faq-schema-green-valley"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="min-h-screen bg-gray-50">
         <div className="fixed w-full z-10">
           <Navigation />
         </div>
 
-        <main className="pt-16">
+        <main id="main-content" className="pt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+            <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Las Vegas Neighborhoods', href: '/las-vegas-neighborhoods' }, { label: 'Green Valley' }]} />
+          </div>
           {/* Hero Section */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,6 +185,38 @@ export default function GreenValleyPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <div className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions About Green Valley</h2>
+              <dl className="space-y-4 max-w-3xl mx-auto">
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">What is Green Valley known for?</dt>
+                  <dd className="text-gray-700">Green Valley is an established family community in Henderson with excellent schools, 30+ parks, tree-lined streets, and affordable housing. See our <Link href="/las-vegas-neighborhoods" className="text-blue-600 hover:underline">Las Vegas Neighborhoods</Link> page for more areas.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How much do homes cost in Green Valley?</dt>
+                  <dd className="text-gray-700">Average home prices in Green Valley are around $450K+. For a custom <Link href="/cma" className="text-blue-600 hover:underline">CMA</Link> or <Link href="/home-value" className="text-blue-600 hover:underline">home value estimate</Link>, contact Dr. Jan Duffy.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Are there good schools in Green Valley?</dt>
+                  <dd className="text-gray-700">Yes. Green Valley is served by top-rated Clark County School District schools and is popular with families. See our <Link href="/buyers" className="text-blue-600 hover:underline">Buyers</Link> page for more.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I get a home value in Green Valley?</dt>
+                  <dd className="text-gray-700">Use our <Link href="/home-value" className="text-blue-600 hover:underline">Home Value</Link> or <Link href="/value" className="text-blue-600 hover:underline">What&apos;s Your Home Worth?</Link> tools for an estimate. For a custom CMA, <Link href="/cma" className="text-blue-600 hover:underline">request a CMA</Link> or <Link href="/contact" className="text-blue-600 hover:underline">contact Dr. Jan Duffy</Link>.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">Who can help me buy or sell in Green Valley?</dt>
+                  <dd className="text-gray-700">Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Las Vegas area real estate including Green Valley. Visit our <Link href="/about" className="text-blue-600 hover:underline">About</Link> and <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> pages.</dd>
+                </div>
+                <div className="bg-white rounded-lg border border-gray-200 p-5 shadow-sm">
+                  <dt className="text-lg font-semibold text-gray-900 mb-2">How do I contact Dr. Jan Duffy?</dt>
+                  <dd className="text-gray-700">Call (702) 500-1953, use the Book a Free Call button on any page, or visit our <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link> page. Dr. Jan Duffy responds within 24 hours.</dd>
+                </div>
+              </dl>
             </div>
           </div>
 
