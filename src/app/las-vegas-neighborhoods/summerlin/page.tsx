@@ -60,6 +60,19 @@ export default function SummerlinPage() {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is Summerlin known for?", "acceptedAnswer": { "@type": "Answer", "text": "Summerlin is Las Vegas premier master-planned community, known for Red Rock Canyon access, 150+ parks and trails, top schools, golf courses, and luxury homes." } },
+      { "@type": "Question", "name": "How much do homes cost in Summerlin?", "acceptedAnswer": { "@type": "Answer", "text": "Average home prices in Summerlin are around $1.33M with a median near $842K. Inventory and pricing vary by village; contact Dr. Jan Duffy for a current CMA." } },
+      { "@type": "Question", "name": "Are there good schools in Summerlin?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Summerlin is served by top-rated Clark County School District schools and is a popular choice for families." } },
+      { "@type": "Question", "name": "How do I get a home value in Summerlin?", "acceptedAnswer": { "@type": "Answer", "text": "Use our Home Value or What's Your Home Worth? tools for an estimate. For a custom CMA in Summerlin, request a CMA or contact Dr. Jan Duffy." } },
+      { "@type": "Question", "name": "Who can help me buy or sell in Summerlin?", "acceptedAnswer": { "@type": "Answer", "text": "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Las Vegas luxury real estate including Summerlin. Visit our Contact or About page." } },
+      { "@type": "Question", "name": "How do I contact Dr. Jan Duffy?", "acceptedAnswer": { "@type": "Answer", "text": "Call (702) 500-1953, use the Book a Free Call button on any page, or visit our Contact page. Dr. Jan Duffy responds within 24 hours." } },
+    ],
+  };
+
   return (
     <>
       <Script

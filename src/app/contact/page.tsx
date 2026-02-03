@@ -181,7 +181,7 @@ export default function ContactPage() {
             </p>
             <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Schedule a Free Call</h3>
             <p className="text-gray-700 mb-4">
-              Use the scheduler below or the "Book your free 15‑min call" button on any page. The call is free and there is no obligation. You can discuss buying, selling, or your home value in Las Vegas or Mayfield Estates.
+              Use the scheduler below or the &quot;Book your free 15‑min call&quot; button on any page. The call is free and there is no obligation. You can discuss buying, selling, or your home value in Las Vegas or Mayfield Estates.
             </p>
             <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-2">Quick Links Before You Call</h3>
             <p className="text-gray-700">

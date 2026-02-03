@@ -60,6 +60,19 @@ export default function GreenValleyPage() {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is Green Valley known for?", "acceptedAnswer": { "@type": "Answer", "text": "Green Valley is an established family community in Henderson with excellent schools, 30+ parks, tree-lined streets, and affordable housing." } },
+      { "@type": "Question", "name": "How much do homes cost in Green Valley?", "acceptedAnswer": { "@type": "Answer", "text": "Average home prices in Green Valley are around $450K+. For a custom CMA, request one on our CMA page or contact Dr. Jan Duffy." } },
+      { "@type": "Question", "name": "Are there good schools in Green Valley?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Green Valley is served by top-rated Clark County School District schools and is popular with families." } },
+      { "@type": "Question", "name": "How do I get a home value in Green Valley?", "acceptedAnswer": { "@type": "Answer", "text": "Use our Home Value or What's Your Home Worth? tools for an estimate. For a custom CMA, request a CMA or contact Dr. Jan Duffy." } },
+      { "@type": "Question", "name": "Who can help me buy or sell in Green Valley?", "acceptedAnswer": { "@type": "Answer", "text": "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in Las Vegas area real estate including Green Valley." } },
+      { "@type": "Question", "name": "How do I contact Dr. Jan Duffy?", "acceptedAnswer": { "@type": "Answer", "text": "Call (702) 500-1953, use the Book a Free Call button on any page, or visit our Contact page. Dr. Jan Duffy responds within 24 hours." } },
+    ],
+  };
+
   return (
     <>
       <Script
